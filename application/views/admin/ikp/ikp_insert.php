@@ -221,7 +221,7 @@
                           <option value="Dokter">Dokter</option>
                           <option value="Perawat">Perawat</option>
                           <option value="Petugas Lainnya">Petugas Lainnya</option>
-                        </select>
+                        </select> 
                       </div>
                       <div class="form-group col-md-8">
                         <label for="prnh_tjd">Apakah kejadian yang sama pernah terjadi di Unit Kerja lain</label>
@@ -230,9 +230,9 @@
                           <option value="Ya">Ya</option>
                           <option value="Tidak">Tidak</option>
                         </select>
+                        <span class="badge text-bg-primary">Apabila Ya, isi bagian dibawah ini.</span>
                       </div>
                       <div class="form-group col-md-12">
-                        <span class="badge text-bg-primary">Apabila Ya, isi bagian dibawah ini.</span>
                         <label for="no_ulang">Kapan ? dan Langkah / Tindakan apa yang telah diambil pada Unit Kerja tersebut untuk mencegah terulangnya kejadian yang sama ?</label>
                         <input type="text" class="form-control" name="no_ulang" id="no_ulang" rows="3" placeholder="Sebutkan . . . ">
                         <?= form_error('no_ulang', '<small class="text-danger pl-3">', '</small>') ?>
@@ -270,7 +270,7 @@
                           <option value="KUNING">KUNING</option>
                           <option value="MERAH">MERAH</option>
                         </select>
-                        <span class="badge text-bg-danger">NB * : Pilih satu jawaban</span></br>
+                        <span class="badge text-bg-danger">NB * : Pilih salah satu jawaban</span></br>
                         <span class="badge text-bg-primary">Tipe Insiden : diisi setelah dilakukan investigasi.</span>
                       </div>
                       
