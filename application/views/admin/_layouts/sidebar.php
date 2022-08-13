@@ -76,6 +76,12 @@
               </a>
             </li>
             <li class="nav-item">
+              <a href="<?= base_url('admin/users')?>" class="nav-link">
+                <i class="nav-icon fas fa-users"></i>
+                <p style="font-family: 'Be Vietnam', sans-serif;">Users</p>
+              </a>
+            </li>
+            <li class="nav-item">
               <a href="<?= base_url('admin/signout'); ?>" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>
                 <p style="font-family: 'Be Vietnam', sans-serif;">Sign Out</p>
