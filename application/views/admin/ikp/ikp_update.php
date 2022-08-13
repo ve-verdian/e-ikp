@@ -51,6 +51,7 @@
                   <?php } ?>
 
                   <div class="card-body">
+                  <span><b>I. DATA KARAKTERISTIK PASIEN</b></span>
 										<div class="form-group row">
                       <?php foreach($ikp as $dikp){ ?>
                         <div class="form-group col-md-6">
@@ -120,7 +121,7 @@
                       </div>
                       <div class="form-group col-md-12">
                         <label for="kronologi">Kronologi</label>
-                        <textarea class="form-control" name="kronologi" id="kronologi" value="<?=$dikp->kronologi?>" rows="3" placeholder="Sebutkan . . . " ></textarea>
+                        <input type="text" class="form-control" type="text" name="kronologi" id="kronologi" value="<?=$dikp->kronologi?>" rows="3" placeholder="Sebutkan . . . " >
                         <?= form_error('kronologi', '<small class="text-danger pl-3">', '</small>') ?>
                       </div> 
                       <div class="form-group col-md-6">
@@ -204,7 +205,7 @@
                     </div>
                     <div class="form-group col-md-12">
                       <label for="tindaklanjut">Tindaklanjut yang dilakukan segera setelah kejadian, dan hasilnya</label>
-                      <textarea class="form-control" name="tindaklanjut" id="tindaklanjut" value="<?=$dikp->tindaklanjut?>" rows="3" placeholder="Sebutkan . . . " ></textarea>
+                      <input type="text" class="form-control" type="text" name="tindaklanjut" id="tindaklanjut" value="<?=$dikp->tindaklanjut?>" rows="3" placeholder="Sebutkan . . . " >
                       <?= form_error('tindaklanjut', '<small class="text-danger pl-3">', '</small>') ?>
                     </div>  
                     <div class="form-group col-md-4">
@@ -228,7 +229,7 @@
                       <div class="form-group col-md-12">
                         <span class="badge text-bg-primary">Apabila Ya, isi bagian dibawah ini.</span>
                         <label for="no_ulang">Kapan ? dan Langkah / Tindakan apa yang telah diambil pada Unit Kerja tersebut untuk mencegah terulangnya kejadian yang sama ?</label>
-                        <textarea class="form-control" name="no_ulang" id="no_ulang" value="<?=$dikp->no_ulang?>" rows="3" placeholder="Sebutkan . . . "></textarea>
+                        <input type="text" class="form-control" type="text" name="no_ulang" id="no_ulang" value="<?=$dikp->no_ulang?>" rows="3" placeholder="Sebutkan . . . ">
                         <!-- <?= form_error('no_ulang', '<small class="text-danger pl-3">', '</small>') ?> -->
                       </div>
                       <div class="form-group col-md-3">
