@@ -1547,6 +1547,120 @@ class Admin extends CI_Controller{
       $this->load->view('admin/ikp/ikp_update');
     }
 	}
+
+  public function cetak_ikp(){
+
+    $id_ikp = substr($this->uri->uri_string(3), 27);
+     
+    $sql_data_ikp = "SELECT * FROM tb_ikp ORDER BY tanggal_1 ASC";
+
+    $sql_ikp    = "SELECT * id_ikp
+                        FROM tb_ikp
+                        WHERE id_ikp='$id_ikp'";
+
+        $this->load->library('pdf');
+        $pdf = new FPDF('l', 'mm', array(410,380));
+        // membuat halaman baru
+        $pdf->AddPage();
+        // setting jenis font yang akan digunakan
+        $pdf->SetFont('Arial', 'B', 16);
+
+        $pdf->Image('http://localhost/ikp/assets/img/rsia_family.jpeg', 75, 5, 30);
+        // $pdf->Image('', )
+        // mencetak string 
+        $pdf->Cell(65, 7, '', 0, 0, 'C');
+        $pdf->Cell(260, 7, 'RSIA Family', 0, 1, 'C');
+        $pdf->SetFont('Arial', '', 12);
+        $pdf->Cell(45, 7, '', 0, 0, 'C');
+        $pdf->Cell(300, 7, 'Jl. Pluit Mas Raya 1 Blok A No.2A-5A, RT.1/RW.18, Pejagalan, Kec. Penjaringan,', 0, 1, 'C');
+				$pdf->Cell(43, 7, '', 0, 0, 'C');
+        $pdf->Cell(300, 7, 'Kota Jakarta Utara, Daerah Khusus Ibukota Jakarta 14450', 0, 1, 'C');
+				$pdf->Cell(83, 7, '', 0, 0, 'C');
+        $pdf->Cell(220, 7, 'Telepon : (021) 669 5066. E-mail: info@rsiafamily.com ', 0, 1, 'C');
+        $pdf->Line(10,40, 430-30, 40);
+        $pdf->Line(10,40.8, 430-30, 40.8);
+        
+        $pdf->Cell(30, 7, '', 0, 1);
+
+        $pdf->Cell(70, 7, '', 0, 0, 'C');
+        $pdf->Cell(250, 7, 'Laporan Insiden Keselamatan Pasien', 0, 1, 'C');
+
+        //tabel hasil input data ikp
+        $pdf->Cell(15,7, '',0,0,'C');
+        // $pdf->Cell(10, 7, '  No  ', 1, 0, 'C');
+        $pdf->Cell(25, 7, ' No  ', 1, 0, 'C');
+        $pdf->Cell(32, 7, '  Nama  ', 1, 0, 'C');
+        $pdf->Cell(30, 7, ' No. MR  ', 1, 0, 'C');
+        $pdf->Cell(40, 7, ' Ruangan  ', 1, 0, 'C');
+				$pdf->Cell(15, 7, '   Umur  ', 1, 0, 'C');
+				$pdf->Cell(25, 7, '  Penanggung Biaya Pasien  ', 1, 0, 'C');
+        $pdf->Cell(20, 7, '  Jenis Kelamin  ', 1, 0, 'C');
+				$pdf->Cell(35, 7, '  Tanggal Mendapatkan Pelayanan  ', 1, 0, 'C');
+				$pdf->Cell(35, 7, '  Tanggal & Waktu Insiden  ', 1, 0, 'C');
+				$pdf->Cell(23, 7, ' Insiden  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, '  kronologi  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, '  Jenis Insiden*  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, '  Insiden terjadi pada pasien*  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, ' Dampak / Akibat Insiden  ', 1, 1, 'C');
+        $pdf->Cell(30, 7, ' Probalitas*  ', 1, 0, 'C');
+        $pdf->Cell(40, 7, ' Orang Pertama Yang Melaporkan Insiden*  ', 1, 0, 'C');
+				$pdf->Cell(15, 7, '   Insiden Menyangkut Pasien*  ', 1, 0, 'C');
+				$pdf->Cell(25, 7, '  Tempat  ', 1, 0, 'C');
+        $pdf->Cell(20, 7, '  Unit Terkait  ', 1, 0, 'C');
+				$pdf->Cell(35, 7, '  Tindaklanjut yang dilakukan  ', 1, 0, 'C');
+				$pdf->Cell(35, 7, '  Tindaklanjut setelah dilakukan ', 1, 0, 'C');
+				$pdf->Cell(23, 7, ' Pernah Terjadi ?  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, '  Kapan ?  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, '  Petugas  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, '  Karu  ', 1, 0, 'C');
+        $pdf->Cell(20, 7, '  Ketua KMRKP ', 1, 0, 'C');
+				$pdf->Cell(20, 7, '  Direktur  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, '  Grading  ', 1, 0, 'C');
+
+
+        $tampil = $this->db->query($sql_data_ikp)->result();
+        foreach ($tampil as $t) {
+        $pdf->Cell(15,7, '',0,0,'C');
+        $pdf->Cell(10, 7, $t->id_ikp, 1, 0, 'C');
+        $pdf->Cell(32, 7, $t->nama, 1, 0, 'C');
+        $pdf->Cell(30, 7, $t->no_mr, 1, 0, 'C');
+        $pdf->Cell(40, 7, $t->ruangan, 1, 0, 'C');
+				$pdf->Cell(15, 7, $t->umur, 1, 0, 'C');
+				$pdf->Cell(25, 7, $t->biaya, 1, 0, 'C');
+        $pdf->Cell(20, 7, $t->jk, 1, 0, 'C');
+        $pdf->Cell(25, 7, date('d-m-Y', strtotime($t->tanggal_1)), 1, 0, 'C');
+        $pdf->Cell(25, 7, date('d-m-Y', strtotime($t->tanggal_2)), 1, 0, 'C');
+				$pdf->Cell(35, 7, $t->insiden, 1, 0, 'C');
+				$pdf->Cell(35, 7, $t->kronologi, 1, 0, 'C');
+				$pdf->Cell(23, 7, $t->jns_insiden, 1, 0, 'C');
+				$pdf->Cell(20, 7, $t->ins_tjd, 1, 0, 'C');
+				$pdf->Cell(20, 7, $t->dampak, 1, 0, 'C');
+				$pdf->Cell(20, 7, $t->probalitas, 1, 0, 'C');
+				$pdf->Cell(20, 7, $t->pelapor, 1, 1, 'C');
+        $pdf->Cell(32, 7, $t->ins_pas, 1, 0, 'C');
+        $pdf->Cell(30, 7, $t->tempat, 1, 0, 'C');
+        $pdf->Cell(40, 7, $t->unit_terkait, 1, 0, 'C');
+				$pdf->Cell(15, 7, $t->tindaklanjut, 1, 0, 'C');
+				$pdf->Cell(25, 7, $t->stlh_dilaku, 1, 0, 'C');
+        $pdf->Cell(20, 7, $t->prnh_tjd, 1, 0, 'C');
+				$pdf->Cell(35, 7, $t->no_ulang, 1, 0, 'C');
+				$pdf->Cell(35, 7, $t->petugas, 1, 0, 'C');
+				$pdf->Cell(23, 7, $t->karu, 1, 0, 'C');
+				$pdf->Cell(20, 7, $t->kmrkp, 1, 0, 'C');
+				$pdf->Cell(20, 7, $t->direktur, 1, 0, 'C');
+				$pdf->Cell(20, 7, $t->grad_res, 1, 0, 'C');
+
+        }
+
+        $pdf->Cell(130, 10, '', 0, 1);
+        $pdf->Cell(130, 10, '', 0, 1);
+        $pdf->Cell(110, 10, '', 0, 0);
+        $pdf->Cell(200, 10, 'Tanggal Cetak', 0, 0, 'R');
+        $pdf->Cell(50, 10, ': '.date('d-m-Y '), 0, 0, 'R');
+
+
+        $pdf->Output();
+    }
 	 ####################################
             // END IKP
 	####################################

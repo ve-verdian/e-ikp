@@ -3,7 +3,7 @@
 if (!defined('BASEPATH'))
     exit('No direct script access allowed');
 
-class M_pc extends CI_Model
+class M_ikp extends CI_Model
 {
 
     public $table = 'tb_ikp';
