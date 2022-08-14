@@ -182,7 +182,9 @@ CREATE TABLE `tb_ikp` (
   `biaya` varchar(50) NOT NULL,
   `jk` varchar(10) NOT NULL,
   `tanggal_1` date NOT NULL,
+  `waktu_1` varchar(5) NOT NULL,
   `tanggal_2` date NOT NULL,
+  `waktu_2` varchar(5) NOT NULL,
   `insiden` varchar(150) NOT NULL,
   `kronologi` varchar(200) NOT NULL,
   `jns_insiden` varchar(100) NOT NULL,
@@ -210,9 +212,9 @@ CREATE TABLE `tb_ikp` (
 -- Dumping data untuk tabel `tb_ikp`
 --
 
-INSERT INTO `tb_ikp` (`id_ikp`, `nama`, `no_mr`, `ruangan`, `umur`, `biaya`, `jk`, `tanggal_1`, `tanggal_2`, `insiden`, `kronologi`, `jns_insiden`, `ins_tjd`, `dampak`, `probalitas`, `pelapor`, `ins_pas`, `tempat`, `unit_terkait`, `tindaklanjut`, `stlh_dilaku`, `prnh_tjd`, `no_ulang`, `petugas`, `karu`, `kmrkp`, `direktur`, `grad_res`, `created`, `modified`) VALUES
-(1, 'Administration', 12345678, 'Adm Ranap', 30, 'BPJS', 'Laki-laki', '2022-08-12', '2022-08-13', 'Jatuh', 'Tersandung tangga', 'Kejadian Nyaris Cedera/KNC (Near Miss)', 'Anak dan Subspesialisasinya', 'Kematian', 'Sangat Jarang', 'Karyawan : Dokter/Perawat/Petugas Lainnya', 'Pasien Rawat Inap', 'Lobby', 'Informasi', 'Periksa', 'Dokter', 'Ya', 'Jaman baheula', 'Perawat Satu', 'Karu Satu', 'Ketua KMRKP', 'Direktur', 'BIRU', '2019-11-05 09:11:38', '2019-11-05 11:53:09'),
-(2, 'Verdi Verdian', 12345678, 'EDP', 30, 'BPJS', 'Laki-laki', '2022-08-12', '2022-08-13', 'Jatuh', 'ergfajkhdklsahkdjhasdsa', 'Kejadian Tidak Cedera (KTC)', 'Lain-lain', 'Tidak Ada Cedera', 'Sangat Jarang', 'Karyawan : Dokter/Perawat/Petugas Lainnya', 'lain-lain', 'EDP', 'Gudang', 'asdfkljdkofhdgfkdshakfjdhfkawe', 'Dokter', 'Tidak', 'sdlfkhskjdkfhdjfkdhfkjwahfwfaf', 'perawat dua', 'karu dua', 'pak ketua', 'direktur', 'BIRU', '2022-08-13 09:40:21', NULL);
+INSERT INTO `tb_ikp` (`id_ikp`, `nama`, `no_mr`, `ruangan`, `umur`, `biaya`, `jk`, `tanggal_1`, `waktu_1`, `tanggal_2`, `waktu_2` , `insiden`, `kronologi`, `jns_insiden`, `ins_tjd`, `dampak`, `probalitas`, `pelapor`, `ins_pas`, `tempat`, `unit_terkait`, `tindaklanjut`, `stlh_dilaku`, `prnh_tjd`, `no_ulang`, `petugas`, `karu`, `kmrkp`, `direktur`, `grad_res`, `created`, `modified`) VALUES
+(1, 'Administration', 12345678, 'Adm Ranap', 30, 'BPJS', 'Laki-laki', '2022-08-12', '20:30','2022-08-13', '20:31' , 'Jatuh', 'Tersandung tangga', 'Kejadian Nyaris Cedera/KNC (Near Miss)', 'Anak dan Subspesialisasinya', 'Kematian', 'Sangat Jarang', 'Karyawan : Dokter/Perawat/Petugas Lainnya', 'Pasien Rawat Inap', 'Lobby', 'Informasi', 'Periksa', 'Dokter', 'Ya', 'Jaman baheula', 'Perawat Satu', 'Karu Satu', 'Ketua KMRKP', 'Direktur', 'BIRU', '2019-11-05 09:11:38', '2019-11-05 11:53:09'),
+(2, 'Verdi Verdian', 12345678, 'EDP', 30, 'BPJS', 'Laki-laki', '2022-08-12', '20:31' , '2022-08-13', '20:31' , 'Jatuh', 'ergfajkhdklsahkdjhasdsa', 'Kejadian Tidak Cedera (KTC)', 'Lain-lain', 'Tidak Ada Cedera', 'Sangat Jarang', 'Karyawan : Dokter/Perawat/Petugas Lainnya', 'lain-lain', 'EDP', 'Gudang', 'asdfkljdkofhdgfkdshakfjdhfkawe', 'Dokter', 'Tidak', 'sdlfkhskjdkfhdjfkdhfkjwahfwfaf', 'perawat dua', 'karu dua', 'pak ketua', 'direktur', 'BIRU', '2022-08-13 09:40:21', NULL);
 
 -- --------------------------------------------------------
 
