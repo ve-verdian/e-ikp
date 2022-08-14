@@ -39,7 +39,9 @@ class M_ikp extends CI_Model
 		$this->db->or_like('biaya', $q);
 		$this->db->or_like('jk', $q);
 		$this->db->or_like('tanggal_1', $q);
+		$this->db->or_like('waktu_1', $q);
 		$this->db->or_like('tanggal_2', $q);
+		$this->db->or_like('waktu_2', $q);
 		$this->db->or_like('insiden', $q);
 		$this->db->or_like('kronologi', $q);
 		$this->db->or_like('jns_insiden', $q);
@@ -74,7 +76,9 @@ class M_ikp extends CI_Model
 		$this->db->or_like('biaya', $q);
 		$this->db->or_like('jk', $q);
 		$this->db->or_like('tanggal_1', $q);
+		$this->db->or_like('waktu_1', $q);
 		$this->db->or_like('tanggal_2', $q);
+		$this->db->or_like('waktu_2', $q);
 		$this->db->or_like('insiden', $q);
 		$this->db->or_like('kronologi', $q);
 		$this->db->or_like('jns_insiden', $q);

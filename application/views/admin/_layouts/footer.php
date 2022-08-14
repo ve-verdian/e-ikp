@@ -48,7 +48,22 @@
 <script src="<?= base_url(); ?>assets/dist/js/adminlte.js"></script>
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?= base_url(); ?>assets/dist/js/pages/dashboard.js"></script>
-
+<!-- Datetimepicker -->
+<script src="<?= base_url(); ?>assets/plugins/datetimepicker/js/bootstrap-datetimepicker.js"></script>
 <!-- DataTables -->
 <script src="<?= base_url(); ?>assets/plugins/datatables/jquery.dataTables.js"></script>
 <script src="<?= base_url(); ?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
+<script type="text/javascript">
+         $(function () {
+             $('#waktu_1').datetimepicker({
+                 format: 'LT'
+             });
+         });
+  </script>
+  <script type="text/javascript">
+         $(function () {
+             $('#waktu_2').datetimepicker({
+                 format: 'LT'
+             });
+         });
+  </script>

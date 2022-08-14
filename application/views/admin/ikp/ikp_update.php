@@ -72,13 +72,13 @@
                           id="ruangan" placeholder="Ruangan" value="<?=$dikp->ruangan?>">
                           <?= form_error('ruangan', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
-                      <div class="form-group col-md-2">
+                      <div class="form-group col-md-1">
                       <label for="umur">Umur</label>
                         <input type="text" name="umur" class="form-control"
                           id="umur" placeholder="Umur" value="<?=$dikp->umur?>">
                           <?= form_error('umur', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
-                      <div class="form-group col-md-4">
+                      <div class="form-group col-md-3">
                         <label for="biaya">Penanggung Biaya Pasien</label>
                         <select class="custom-select" name="biaya" id="biaya">
                           <option value="<?=$dikp->biaya?>"><?=$dikp->biaya?></option>
@@ -104,6 +104,12 @@
 													id="tanggal_1" placeholder="Tanggal Mendapatkan Pelayanan" value="<?=$dikp->tanggal_1?>">
 													<?= form_error('tanggal_1', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
+                      <div class="form-group col-md-2">
+                        <label for="waktu_1">Pukul</label>
+                        <input type="time" name="waktu_1"  class="form-control"
+													id="waktu_1" placeholder="Tanggal Mendapatkan Pelayanan" value="<?=$dikp->waktu_1?>">
+													<?= form_error('waktu_1', '<small class="text-danger pl-3">', '</small>') ?>
+                      </div>
 										</div>
                     <span><b>II. RINCIAN KEJADIAN</b></span>   
                     <div class="form-row">
@@ -113,7 +119,13 @@
 													id="tanggal_2" placeholder="Tanggal dan Waktu Insiden"  value="<?=$dikp->tanggal_2?>">
 													<?= form_error('tanggal_2', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
-                      <div class="form-group col-md-8">
+                      <div class="form-group col-md-2">
+                        <label for="waktu_2" >Pukul</label>
+                        <input type="time" name="waktu_2"  class="form-control"
+													id="waktu_2" placeholder="Tanggal dan Waktu Insiden" value="<?=$dikp->waktu_2?>">
+													<?= form_error('waktu_2', '<small class="text-danger pl-3">', '</small>') ?>
+                      </div>
+                      <div class="form-group col-md-6">
                         <label for="insiden">Insiden</label>
                         <input type="text" name="insiden" class="form-control"
                           id="insiden" placeholder="Insiden" value="<?=$dikp->insiden?>">
@@ -265,7 +277,7 @@
                           <option value="KUNING">KUNING</option>
                           <option value="MERAH">MERAH</option>
                         </select>
-                        <span class="badge text-bg-danger">NB * : Pilih salah satu jawaban</span></br>
+                        <span class="badge text-bg-danger">NB * : Pilih salah satu jawaban.</span></br>
                         <span class="badge text-bg-primary">Tipe Insiden : diisi setelah dilakukan investigasi.</span>
                       </div>
                     </div>

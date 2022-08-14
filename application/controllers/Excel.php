@@ -651,26 +651,28 @@ class Excel extends CI_Controller {
     $excel->setActiveSheetIndex(0)->setCellValue('E3', "Penanggung Biaya Pasien"); // Set kolom D3 dengan tulisan "NAMA BARANG"
 		$excel->setActiveSheetIndex(0)->setCellValue('F3', "Jenis Kelamin"); // Set kolom E3 dengan tulisan "JUMLAH"
 		$excel->setActiveSheetIndex(0)->setCellValue('G3', "Tanggal Mendapatkan Pelayanan"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('H3', "Tanggal dan Waktu Insiden"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('I3', "Insiden"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('J3', "Kronologi"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('K3', "Jenis Insiden*"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('L3', "Insiden terjadi pada pasien* : (sesuai kasus penyakit/spesialisasi)"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('M3', "Dampak / Akibat Insiden Terhadap Pasien* : (lihat Garding Matriks)"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('N3', "Probalitas* : (lihat Garding Matriks)"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('O3', "Orang Pertama Yang Melaporkan Insiden*"); // Set kolom E3 dengan tulisan "SATUAN"
-    $excel->setActiveSheetIndex(0)->setCellValue('P3', "Insiden Menyangkut Pasien*"); // Set kolom E3 dengan tulisan "JUMLAH"
-		$excel->setActiveSheetIndex(0)->setCellValue('Q3', "Tempat Insiden"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('R3', "Unit Terkait Yang Menyebabkan Insiden"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('S3', "Tindaklanjut yang dilakukan segera setelah kejadian, dan hasilnya"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('T3', "Tindaklanjut setelah dilakukan oleh"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('U3', "Apakah kejadian yang sama pernah terjadi di Unit Kerja lain"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('V3', "Kapan ? dan Langkah / Tindakan apa yang telah diambil pada Unit Kerja tersebut untuk mencegah terulangnya kejadian yang sama ?"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('W3', "Petugas yang membuat laporan"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('X3', "Kepala Ruang/Unit/Bidang"); // Set kolom E3 dengan tulisan "SATUAN"
-		$excel->setActiveSheetIndex(0)->setCellValue('Y3', "Ketua KMRKP"); // Set kolom E3 dengan tulisan "SATUAN"
-    $excel->setActiveSheetIndex(0)->setCellValue('Z3', "Direktur"); // Set kolom E3 dengan tulisan "SATUAN"
-    $excel->setActiveSheetIndex(0)->setCellValue('AA3', "Grading Resiko Kejadian*"); // Set kolom E3 dengan tulisan "SATUAN"
+    $excel->setActiveSheetIndex(0)->setCellValue('H3', "Pukul"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('I3', "Tanggal dan Waktu Insiden"); // Set kolom E3 dengan tulisan "SATUAN"
+    $excel->setActiveSheetIndex(0)->setCellValue('J3', "Pukul"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('K3', "Insiden"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('L3', "Kronologi"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('M3', "Jenis Insiden*"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('N3', "Insiden terjadi pada pasien* : (sesuai kasus penyakit/spesialisasi)"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('O3', "Dampak / Akibat Insiden Terhadap Pasien* : (lihat Garding Matriks)"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('P3', "Probalitas* : (lihat Garding Matriks)"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('Q3', "Orang Pertama Yang Melaporkan Insiden*"); // Set kolom E3 dengan tulisan "SATUAN"
+    $excel->setActiveSheetIndex(0)->setCellValue('R3', "Insiden Menyangkut Pasien*"); // Set kolom E3 dengan tulisan "JUMLAH"
+		$excel->setActiveSheetIndex(0)->setCellValue('S3', "Tempat Insiden"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('T3', "Unit Terkait Yang Menyebabkan Insiden"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('U3', "Tindaklanjut yang dilakukan segera setelah kejadian, dan hasilnya"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('V3', "Tindaklanjut setelah dilakukan oleh"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('W3', "Apakah kejadian yang sama pernah terjadi di Unit Kerja lain"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('X3', "Kapan ? dan Langkah / Tindakan apa yang telah diambil pada Unit Kerja tersebut untuk mencegah terulangnya kejadian yang sama ?"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('Y3', "Petugas yang membuat laporan"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('Z3', "Kepala Ruang/Unit/Bidang"); // Set kolom E3 dengan tulisan "SATUAN"
+		$excel->setActiveSheetIndex(0)->setCellValue('AA3', "Ketua KMRKP"); // Set kolom E3 dengan tulisan "SATUAN"
+    $excel->setActiveSheetIndex(0)->setCellValue('AB3', "Direktur"); // Set kolom E3 dengan tulisan "SATUAN"
+    $excel->setActiveSheetIndex(0)->setCellValue('AC3', "Grading Resiko Kejadian*"); // Set kolom E3 dengan tulisan "SATUAN"
 
     // Apply style header yang telah kita buat tadi ke masing-masing kolom header
     $excel->getActiveSheet()->getStyle('A3')->applyFromArray($style_col);
@@ -700,6 +702,8 @@ class Excel extends CI_Controller {
 		$excel->getActiveSheet()->getStyle('Y3')->applyFromArray($style_col);
 		$excel->getActiveSheet()->getStyle('Z3')->applyFromArray($style_col);
 		$excel->getActiveSheet()->getStyle('AA3')->applyFromArray($style_col);
+    $excel->getActiveSheet()->getStyle('AB3')->applyFromArray($style_col);
+    $excel->getActiveSheet()->getStyle('AC3')->applyFromArray($style_col);
 		
 		$tampil = $this->db->query($sql_data_ikp)->result();
 
@@ -713,26 +717,28 @@ class Excel extends CI_Controller {
 			$excel->setActiveSheetIndex(0)->setCellValue('E'.$numrow, $data->biaya);
 			$excel->setActiveSheetIndex(0)->setCellValue('F'.$numrow, $data->jk);
       $excel->setActiveSheetIndex(0)->setCellValue('G'.$numrow,date('d-m-Y', strtotime($data->tanggal_1)));
-      $excel->setActiveSheetIndex(0)->setCellValue('H'.$numrow,date('d-m-Y', strtotime($data->tanggal_2)));
-			$excel->setActiveSheetIndex(0)->setCellValue('I'.$numrow, $data->insiden);
-			$excel->setActiveSheetIndex(0)->setCellValue('J'.$numrow, $data->kronologi);
-			$excel->setActiveSheetIndex(0)->setCellValue('K'.$numrow, $data->jns_insiden);
-			$excel->setActiveSheetIndex(0)->setCellValue('L'.$numrow, $data->ins_tjd);
-			$excel->setActiveSheetIndex(0)->setCellValue('M'.$numrow, $data->dampak);
-			$excel->setActiveSheetIndex(0)->setCellValue('N'.$numrow, $data->probalitas);
-			$excel->setActiveSheetIndex(0)->setCellValue('O'.$numrow, $data->pelapor);
-			$excel->setActiveSheetIndex(0)->setCellValue('P'.$numrow, $data->ins_pas);
-      $excel->setActiveSheetIndex(0)->setCellValue('Q'.$numrow, $data->tempat);
-      $excel->setActiveSheetIndex(0)->setCellValue('R'.$numrow, $data->unit_terkait);
-      $excel->setActiveSheetIndex(0)->setCellValue('S'.$numrow, $data->tindaklanjut);
-			$excel->setActiveSheetIndex(0)->setCellValue('T'.$numrow, $data->stlh_dilaku);
-			$excel->setActiveSheetIndex(0)->setCellValue('U'.$numrow, $data->prnh_tjd);
-			$excel->setActiveSheetIndex(0)->setCellValue('V'.$numrow, $data->no_ulang);
-			$excel->setActiveSheetIndex(0)->setCellValue('W'.$numrow, $data->petugas);
-			$excel->setActiveSheetIndex(0)->setCellValue('X'.$numrow, $data->karu);
-			$excel->setActiveSheetIndex(0)->setCellValue('Y'.$numrow, $data->kmrkp);
-			$excel->setActiveSheetIndex(0)->setCellValue('Z'.$numrow, $data->direktur);
-			$excel->setActiveSheetIndex(0)->setCellValue('AA'.$numrow, $data->grad_res);
+      $excel->setActiveSheetIndex(0)->setCellValue('H'.$numrow, $data->waktu_1);
+      $excel->setActiveSheetIndex(0)->setCellValue('I'.$numrow,date('d-m-Y', strtotime($data->tanggal_2)));
+      $excel->setActiveSheetIndex(0)->setCellValue('J'.$numrow, $data->waktu_2);
+			$excel->setActiveSheetIndex(0)->setCellValue('K'.$numrow, $data->insiden);
+			$excel->setActiveSheetIndex(0)->setCellValue('L'.$numrow, $data->kronologi);
+			$excel->setActiveSheetIndex(0)->setCellValue('M'.$numrow, $data->jns_insiden);
+			$excel->setActiveSheetIndex(0)->setCellValue('N'.$numrow, $data->ins_tjd);
+			$excel->setActiveSheetIndex(0)->setCellValue('O'.$numrow, $data->dampak);
+			$excel->setActiveSheetIndex(0)->setCellValue('P'.$numrow, $data->probalitas);
+			$excel->setActiveSheetIndex(0)->setCellValue('Q'.$numrow, $data->pelapor);
+			$excel->setActiveSheetIndex(0)->setCellValue('R'.$numrow, $data->ins_pas);
+      $excel->setActiveSheetIndex(0)->setCellValue('S'.$numrow, $data->tempat);
+      $excel->setActiveSheetIndex(0)->setCellValue('T'.$numrow, $data->unit_terkait);
+      $excel->setActiveSheetIndex(0)->setCellValue('U'.$numrow, $data->tindaklanjut);
+			$excel->setActiveSheetIndex(0)->setCellValue('V'.$numrow, $data->stlh_dilaku);
+			$excel->setActiveSheetIndex(0)->setCellValue('W'.$numrow, $data->prnh_tjd);
+			$excel->setActiveSheetIndex(0)->setCellValue('X'.$numrow, $data->no_ulang);
+			$excel->setActiveSheetIndex(0)->setCellValue('Y'.$numrow, $data->petugas);
+			$excel->setActiveSheetIndex(0)->setCellValue('Z'.$numrow, $data->karu);
+			$excel->setActiveSheetIndex(0)->setCellValue('AA'.$numrow, $data->kmrkp);
+			$excel->setActiveSheetIndex(0)->setCellValue('AB'.$numrow, $data->direktur);
+			$excel->setActiveSheetIndex(0)->setCellValue('AC'.$numrow, $data->grad_res);
 			
       // Apply style row yang telah kita buat tadi ke masing-masing baris (isi tabel)
       $excel->getActiveSheet()->getStyle('A'.$numrow)->applyFromArray($style_row);
@@ -762,6 +768,8 @@ class Excel extends CI_Controller {
 			$excel->getActiveSheet()->getStyle('Y'.$numrow)->applyFromArray($style_row);
 			$excel->getActiveSheet()->getStyle('Z'.$numrow)->applyFromArray($style_row);
 			$excel->getActiveSheet()->getStyle('AA'.$numrow)->applyFromArray($style_row);
+      $excel->getActiveSheet()->getStyle('AB'.$numrow)->applyFromArray($style_row);
+      $excel->getActiveSheet()->getStyle('AC'.$numrow)->applyFromArray($style_row);
       
       $no++; // Tambah 1 setiap kali looping
       $numrow++; // Tambah 1 setiap kali looping
@@ -795,6 +803,8 @@ class Excel extends CI_Controller {
 		$excel->getActiveSheet()->getColumnDimension('Y')->setWidth(8); // Set width kolom M
 		$excel->getActiveSheet()->getColumnDimension('Z')->setWidth(8); // Set width kolom N
 		$excel->getActiveSheet()->getColumnDimension('AA')->setWidth(8); // Set width kolom O
+    $excel->getActiveSheet()->getColumnDimension('AB')->setWidth(8); // Set width kolom O
+    $excel->getActiveSheet()->getColumnDimension('AC')->setWidth(8); // Set width kolom O
     
     // Set height semua kolom menjadi auto (mengikuti height isi dari kolommnya, jadi otomatis)
     $excel->getActiveSheet()->getDefaultRowDimension()->setRowHeight(-1);

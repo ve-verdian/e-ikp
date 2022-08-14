@@ -1350,11 +1350,13 @@ class Admin extends CI_Controller{
 		$this->form_validation->set_rules('ruangan','Ruangan','trim|required');
 		$this->form_validation->set_rules('umur','Umur','trim|required');
 		$this->form_validation->set_rules('biaya','Biaya','trim|required');
-		$this->form_validation->set_rules('jk','Jenis Kelamin','trim');
-		$this->form_validation->set_rules('tanggal_1','Tanggal Satu','trim');
-		$this->form_validation->set_rules('tanggal_2','Tanggal Dua','trim');
+		$this->form_validation->set_rules('jk','Jenis Kelamin','trim|required');
+		$this->form_validation->set_rules('tanggal_1','Tanggal Satu','trim|required');
+    $this->form_validation->set_rules('waktu_1','Waktu Satu','trim|required');
+		$this->form_validation->set_rules('tanggal_2','Tanggal Dua','trim|required');
+    $this->form_validation->set_rules('waktu_2','Waktu Dua','trim|required');
 		$this->form_validation->set_rules('insiden','Insiden','trim|required');
-		$this->form_validation->set_rules('kronologi','Kronologi','trim');
+		$this->form_validation->set_rules('kronologi','Kronologi','trim|required');
 		$this->form_validation->set_rules('jns_insiden','Jenis Insiden','trim|required');
 		$this->form_validation->set_rules('ins_tjd','Insiden Terjadi','trim|required');
 		$this->form_validation->set_rules('dampak','Dampak','trim|required');
@@ -1384,7 +1386,9 @@ class Admin extends CI_Controller{
 			$jk = $this->input->post('jk' ,TRUE);
 			$ram = $this->input->post('ram' ,TRUE);
 			$tanggal_1 = $this->input->post('tanggal_1' ,TRUE);
+      $waktu_1 = $this->input->post('waktu_1' ,TRUE);
 			$tanggal_2 = $this->input->post('tanggal_2' ,TRUE);
+      $waktu_2 = $this->input->post('waktu_2' ,TRUE);
 			$insiden = $this->input->post('insiden' ,TRUE);
 			$kronologi = $this->input->post('kronologi' ,TRUE);
 			$jns_insiden = $this->input->post('jns_insiden' ,TRUE);
@@ -1413,7 +1417,9 @@ class Admin extends CI_Controller{
 						'biaya' => $biaya,
 						'jk' => $jk,
 						'tanggal_1' => $tanggal_1,
+            'tanggal_1' => $waktu_1,
 						'tanggal_2' => $tanggal_2,
+            'tanggal_1' => $waktu_2,
 						'insiden' => $insiden,
 						'kronologi' => $kronologi,
 						'jns_insiden' => $jns_insiden,
@@ -1450,9 +1456,11 @@ class Admin extends CI_Controller{
 		$this->form_validation->set_rules('ruangan','Ruangan','trim|required');
 		$this->form_validation->set_rules('umur','Umur','trim|required');
 		$this->form_validation->set_rules('biaya','Biaya','trim|required');
-		$this->form_validation->set_rules('jk','Jenis Kelamin','trim');
-		$this->form_validation->set_rules('tanggal_1','Tanggal Satu','trim');
-		$this->form_validation->set_rules('tanggal_2','Tanggal Dua','trim');
+		$this->form_validation->set_rules('jk','Jenis Kelamin','trim|required');
+		$this->form_validation->set_rules('tanggal_1','Tanggal Satu','trim|required');
+    $this->form_validation->set_rules('waktu_1','Waktu Satu','trim|required');
+		$this->form_validation->set_rules('tanggal_2','Tanggal Dua','trim|required');
+    $this->form_validation->set_rules('waktu_2','Waktu Dua','trim|required');
 		$this->form_validation->set_rules('insiden','Insiden','trim|required');
 		$this->form_validation->set_rules('kronologi','Kronologi','trim');
 		$this->form_validation->set_rules('jns_insiden','Jenis Insiden','trim|required');
@@ -1484,7 +1492,9 @@ class Admin extends CI_Controller{
 			$jk = $this->input->post('jk' ,TRUE);
 			$ram = $this->input->post('ram' ,TRUE);
 			$tanggal_1 = $this->input->post('tanggal_1' ,TRUE);
+      $waktu_1 = $this->input->post('waktu_1' ,TRUE);
 			$tanggal_2 = $this->input->post('tanggal_2' ,TRUE);
+      $waktu_2 = $this->input->post('waktu_2' ,TRUE);
 			$insiden = $this->input->post('insiden' ,TRUE);
 			$kronologi = $this->input->post('kronologi' ,TRUE);
 			$jns_insiden = $this->input->post('jns_insiden' ,TRUE);
@@ -1518,7 +1528,9 @@ class Admin extends CI_Controller{
 						'biaya' => $biaya,
 						'jk' => $jk,
 						'tanggal_1' => $tanggal_1,
+            'waktu_1' => $waktu_1,
 						'tanggal_2' => $tanggal_2,
+            'waktu_2' => $waktu_2,
 						'insiden' => $insiden,
 						'kronologi' => $kronologi,
 						'jns_insiden' => $jns_insiden,
@@ -1589,33 +1601,35 @@ class Admin extends CI_Controller{
         $pdf->Cell(15,7, '',0,0,'C');
         // $pdf->Cell(10, 7, '  No  ', 1, 0, 'C');
         $pdf->Cell(25, 7, ' No  ', 1, 0, 'C');
-        $pdf->Cell(32, 7, '  Nama  ', 1, 0, 'C');
+        $pdf->Cell(32, 7, ' Nama  ', 1, 0, 'C');
         $pdf->Cell(30, 7, ' No. MR  ', 1, 0, 'C');
         $pdf->Cell(40, 7, ' Ruangan  ', 1, 0, 'C');
-				$pdf->Cell(15, 7, '   Umur  ', 1, 0, 'C');
-				$pdf->Cell(25, 7, '  Penanggung Biaya Pasien  ', 1, 0, 'C');
-        $pdf->Cell(20, 7, '  Jenis Kelamin  ', 1, 0, 'C');
-				$pdf->Cell(35, 7, '  Tanggal Mendapatkan Pelayanan  ', 1, 0, 'C');
-				$pdf->Cell(35, 7, '  Tanggal & Waktu Insiden  ', 1, 0, 'C');
+				$pdf->Cell(15, 7, ' Umur  ', 1, 0, 'C');
+				$pdf->Cell(25, 7, ' Penanggung Biaya Pasien  ', 1, 0, 'C');
+        $pdf->Cell(20, 7, ' Jenis Kelamin  ', 1, 0, 'C');
+				$pdf->Cell(35, 7, ' Tanggal Mendapatkan Pelayanan  ', 1, 0, 'C');
+        $pdf->Cell(35, 7, ' Pukul  ', 1, 0, 'C');
+				$pdf->Cell(35, 7, ' Tanggal & Waktu Insiden  ', 1, 0, 'C');
+        $pdf->Cell(35, 7, ' Pukul  ', 1, 0, 'C');
 				$pdf->Cell(23, 7, ' Insiden  ', 1, 0, 'C');
-				$pdf->Cell(20, 7, '  kronologi  ', 1, 0, 'C');
-				$pdf->Cell(20, 7, '  Jenis Insiden*  ', 1, 0, 'C');
-				$pdf->Cell(20, 7, '  Insiden terjadi pada pasien*  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, ' Kronologi  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, ' Jenis Insiden*  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, ' Insiden terjadi pada pasien*  ', 1, 0, 'C');
 				$pdf->Cell(20, 7, ' Dampak / Akibat Insiden  ', 1, 1, 'C');
         $pdf->Cell(30, 7, ' Probalitas*  ', 1, 0, 'C');
         $pdf->Cell(40, 7, ' Orang Pertama Yang Melaporkan Insiden*  ', 1, 0, 'C');
-				$pdf->Cell(15, 7, '   Insiden Menyangkut Pasien*  ', 1, 0, 'C');
-				$pdf->Cell(25, 7, '  Tempat  ', 1, 0, 'C');
-        $pdf->Cell(20, 7, '  Unit Terkait  ', 1, 0, 'C');
-				$pdf->Cell(35, 7, '  Tindaklanjut yang dilakukan  ', 1, 0, 'C');
-				$pdf->Cell(35, 7, '  Tindaklanjut setelah dilakukan ', 1, 0, 'C');
+				$pdf->Cell(15, 7, ' Insiden Menyangkut Pasien*  ', 1, 0, 'C');
+				$pdf->Cell(25, 7, ' Tempat  ', 1, 0, 'C');
+        $pdf->Cell(20, 7, ' Unit Terkait  ', 1, 0, 'C');
+				$pdf->Cell(35, 7, ' Tindaklanjut yang dilakukan  ', 1, 0, 'C');
+				$pdf->Cell(35, 7, ' Tindaklanjut setelah dilakukan ', 1, 0, 'C');
 				$pdf->Cell(23, 7, ' Pernah Terjadi ?  ', 1, 0, 'C');
-				$pdf->Cell(20, 7, '  Kapan ?  ', 1, 0, 'C');
-				$pdf->Cell(20, 7, '  Petugas  ', 1, 0, 'C');
-				$pdf->Cell(20, 7, '  Karu  ', 1, 0, 'C');
-        $pdf->Cell(20, 7, '  Ketua KMRKP ', 1, 0, 'C');
-				$pdf->Cell(20, 7, '  Direktur  ', 1, 0, 'C');
-				$pdf->Cell(20, 7, '  Grading  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, ' Kapan ?  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, ' Petugas  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, ' Karu  ', 1, 0, 'C');
+        $pdf->Cell(20, 7, ' Ketua KMRKP ', 1, 0, 'C');
+				$pdf->Cell(20, 7, ' Direktur  ', 1, 0, 'C');
+				$pdf->Cell(20, 7, ' Grading  ', 1, 0, 'C');
 
 
         $tampil = $this->db->query($sql_data_ikp)->result();
@@ -1629,7 +1643,9 @@ class Admin extends CI_Controller{
 				$pdf->Cell(25, 7, $t->biaya, 1, 0, 'C');
         $pdf->Cell(20, 7, $t->jk, 1, 0, 'C');
         $pdf->Cell(25, 7, date('d-m-Y', strtotime($t->tanggal_1)), 1, 0, 'C');
+        $pdf->Cell(20, 7, $t->waktu_1, 1, 0, 'C');
         $pdf->Cell(25, 7, date('d-m-Y', strtotime($t->tanggal_2)), 1, 0, 'C');
+        $pdf->Cell(20, 7, $t->waktu_2, 1, 0, 'C');
 				$pdf->Cell(35, 7, $t->insiden, 1, 0, 'C');
 				$pdf->Cell(35, 7, $t->kronologi, 1, 0, 'C');
 				$pdf->Cell(23, 7, $t->jns_insiden, 1, 0, 'C');
