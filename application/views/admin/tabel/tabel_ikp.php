@@ -58,7 +58,9 @@
 									<th width="8%"><center>Penanggung Biaya Pasien</th>
                   <th width="12%"><center>Jenis Kelamin</th>
 									<th width="10%"><center>Tanggal Mendapatkan Pelayanan</th>
+                  <th width="8%"><center>Pukul</th>
                   <th width="25%"><center>Tanggal & Waktu Insiden</th>
+                  <th width="8%"><center>Pukul</th>
 									<th width="25%"><center>Insiden</th>
                   <th width="25%"><center>kronologi</th>
                   <th width="15%"><center>Jenis Insiden*</th>
@@ -95,7 +97,9 @@
                     <td width="15%"><?=$dd->biaya?></td>
                     <td width="15%"><?=$dd->jk?></td>
                     <td width="15%"><center><?=date('d-m-Y', strtotime($dd->tanggal_1))?></td>
+                    <td width="8%"><center><?=$dd->waktu_1?></td>
                     <td width="15%"><center><?=date('d-m-Y', strtotime($dd->tanggal_2))?></td>
+                    <td width="8%"><center><?=$dd->waktu_2?></td>
                     <td width="15%"><center><?=$dd->insiden?></td>
 										<td width="15%"><center><?=$dd->kronologi?></td>
 										<td width="8%"><center><?=$dd->jns_insiden?></td>
