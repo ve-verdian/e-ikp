@@ -80,6 +80,7 @@
                   <th width="25%"><center>Ketua KMRKP</th>
 									<th width="25%"><center>Direktur</th>
                   <th width="15%"><center>Grading</th>
+                  <th width="15%"><center>Cetak</th>
 									<th width="15%"><center>Update</th>
 									<th width="15%"><center>Hapus</th>
                 </tr>
@@ -119,6 +120,8 @@
                     <td width="8%"><center><?=$dd->kmrkp?></td>
                     <td width="8%"><center><?=$dd->direktur?></td>
                     <td width="8%"><center><?=$dd->grad_res?></td>
+                    <!-- <td href="<?php echo base_URL()?>index.php/admin/disposisi_cetak/<?php echo $b->id?>" class="btn btn-info btn-sm" target="_blank" title="Cetak Disposisi"><i class="icon-print icon-white"> </i> Ctk</td> -->
+                    <td width="15%"><center><a type="button" class="btn btn-warning center-block"  href="<?=base_url('admin/print_ikp/'.$dd->id_ikp)?>" name="btn_cetak" style="margin:auto;"><i class="fas fa-print"  aria-hidden="true"></i></a></td>
 										<td width="15%"><center><a type="button" class="btn btn-success center-block"  href="<?=base_url('admin/update_ikp/'.$dd->id_ikp)?>" name="btn_update" style="margin:auto;"><i class="fas fa-edit"  aria-hidden="true"></i></a></td>
 										<td width="15%"><center><a type="button" class="btn btn-danger btn-delete center-block"  href="<?=base_url('admin/delete_ikp/'.$dd->id_ikp)?>" name="btn_delete" style="margin:auto;"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                 </tr>

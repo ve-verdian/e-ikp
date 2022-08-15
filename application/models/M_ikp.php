@@ -122,5 +122,13 @@ class M_ikp extends CI_Model
         $this->db->delete($this->table);
     }
 
+	 // cetak data
+	 function cetak($id, $data)
+	 {
+		 $this->db->where($this->id, $id);
+		 $this->db->update($this->table, $data);
+
+	}
 }
+
 

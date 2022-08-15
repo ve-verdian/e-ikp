@@ -112,11 +112,7 @@
                       <div class="form-group col-md-2">
                         <label for="waktu_1">Pukul</label>
                         <input type="time" name="waktu_1"  class="form-control"
-<<<<<<< HEAD
 													id="waktu_1" placeholder="Pukul">
-=======
-													id="waktu_1" placeholder="Tanggal Mendapatkan Pelayanan">
->>>>>>> f547f4ff5fc5775a7a83cddd45881b049f99b775
 													<?= form_error('waktu_1', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                   </div>               
@@ -131,11 +127,7 @@
                       <div class="form-group col-md-2">
                         <label for="waktu_2" >Pukul</label>
                         <input type="time" name="waktu_2"  class="form-control"
-<<<<<<< HEAD
 													id="waktu_2" placeholder="Pukul">
-=======
-													id="waktu_2" placeholder="Tanggal dan Waktu Insiden">
->>>>>>> f547f4ff5fc5775a7a83cddd45881b049f99b775
 													<?= form_error('waktu_2', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-6">
@@ -291,11 +283,7 @@
                           <option value="MERAH">MERAH</option>
                         </select>
                         <span class="badge text-bg-danger">NB * : Pilih salah satu jawaban.</span></br>
-<<<<<<< HEAD
                         <span class="badge text-bg-primary">Tipe Insiden : Diisi setelah dilakukan investigasi.</span>
-=======
-                        <span class="badge text-bg-primary">Tipe Insiden : diisi setelah dilakukan investigasi.</span>
->>>>>>> f547f4ff5fc5775a7a83cddd45881b049f99b775
                       </div>
                       
                   </div>

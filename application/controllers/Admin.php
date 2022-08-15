@@ -1417,15 +1417,12 @@ class Admin extends CI_Controller{
 						'biaya' => $biaya,
 						'jk' => $jk,
 						'tanggal_1' => $tanggal_1,
-<<<<<<< HEAD
             'waktu_1' => $waktu_1,
 						'tanggal_2' => $tanggal_2,
             'waktu_2' => $waktu_2,
-=======
             'tanggal_1' => $waktu_1,
 						'tanggal_2' => $tanggal_2,
             'tanggal_1' => $waktu_2,
->>>>>>> f547f4ff5fc5775a7a83cddd45881b049f99b775
 						'insiden' => $insiden,
 						'kronologi' => $kronologi,
 						'jns_insiden' => $jns_insiden,
@@ -1682,6 +1679,22 @@ class Admin extends CI_Controller{
 
 
         $pdf->Output();
+    }
+
+    public function print_ikp() {
+      $data['title'] = 'Form IKP | Cetak Data IKP';
+      $uri = $this->uri->segment(4);
+      $data['ikp']	= $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp = '$uri'")->row();	
+      // $a['datpil2']	= $this->db->query("SELECT kpd_yth FROM t_disposisi WHERE id_surat = '$idu'")->result();	
+      // $a['datpil3']	= $this->db->query("SELECT isi_disposisi, sifat, batas_waktu FROM t_disposisi WHERE id_surat = '$idu'")->result();	
+      $this->load->view('admin/ikp/print_ikp', $data);
+
+      // $data['title'] = 'Form IKP | Cetak Data IKP';
+      // $uri = $this->uri->segment(3);
+      // $where = array('id_ikp' => $uri);
+      // $data['ikp'] = $this->M_admin->get_data('tb_ikp', $where);
+      // $data['avatar'] = $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
+      // $this->load->view('admin/ikp/print_ikp',$data);
     }
 	 ####################################
             // END IKP
