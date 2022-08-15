@@ -182,9 +182,15 @@ CREATE TABLE `tb_ikp` (
   `biaya` varchar(50) NOT NULL,
   `jk` varchar(10) NOT NULL,
   `tanggal_1` date NOT NULL,
+<<<<<<< HEAD
   `waktu_1` time NOT NULL,
   `tanggal_2` date NOT NULL,
   `waktu_2` time NOT NULL,
+=======
+  `waktu_1` varchar(5) NOT NULL,
+  `tanggal_2` date NOT NULL,
+  `waktu_2` varchar(5) NOT NULL,
+>>>>>>> f547f4ff5fc5775a7a83cddd45881b049f99b775
   `insiden` varchar(150) NOT NULL,
   `kronologi` varchar(200) NOT NULL,
   `jns_insiden` varchar(100) NOT NULL,

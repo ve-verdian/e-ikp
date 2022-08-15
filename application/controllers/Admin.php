@@ -1417,9 +1417,15 @@ class Admin extends CI_Controller{
 						'biaya' => $biaya,
 						'jk' => $jk,
 						'tanggal_1' => $tanggal_1,
+<<<<<<< HEAD
             'waktu_1' => $waktu_1,
 						'tanggal_2' => $tanggal_2,
             'waktu_2' => $waktu_2,
+=======
+            'tanggal_1' => $waktu_1,
+						'tanggal_2' => $tanggal_2,
+            'tanggal_1' => $waktu_2,
+>>>>>>> f547f4ff5fc5775a7a83cddd45881b049f99b775
 						'insiden' => $insiden,
 						'kronologi' => $kronologi,
 						'jns_insiden' => $jns_insiden,
