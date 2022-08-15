@@ -46,7 +46,7 @@
 
 						<a href="<?=base_url('admin/ikp')?>" style="margin-bottom:10px;" type="button" class="btn btn-primary" name="tambah_data"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Data IKP</a>
             <a href="<?=base_url('excel/export_ikp')?>" style="margin-bottom:10px;" type="button" class="btn btn-success" name="export_excel"><i class="fa fa-plus-circle" aria-hidden="true"></i> Export Excel</a>
-						<a href="<?=base_url('admin/cetak_ikp')?>" style="margin-bottom:10px;" target="_BLANK" type="button" class="btn btn-danger" name="cetak_pdf"><i class="fa fa-plus-circle" aria-hidden="true"></i> Cetak Pdf</a>    
+						<!-- <a href="<?=base_url('admin/cetak_ikp')?>" style="margin-bottom:10px;" target="_BLANK" type="button" class="btn btn-danger" name="cetak_pdf"><i class="fa fa-plus-circle" aria-hidden="true"></i> Cetak Pdf</a>     -->
 							<table id="example1" class="table table-responsive table-bordered table-striped">
                 <thead>
                 <tr>
@@ -55,20 +55,20 @@
                   <th width="15%"><center>No. MR</th>
 									<th width="15%"><center>Ruangan</th>
                   <th width="15%"><center>Umur</th>
-									<th width="8%"><center>Penanggung Biaya Pasien</th>
-                  <th width="12%"><center>Jenis Kelamin</th>
-									<th width="10%"><center>Tanggal Mendapatkan Pelayanan</th>
+									<th width="15%"><center>Penanggung Biaya Pasien</th>
+                  <th width="8%"><center>Jenis Kelamin</th>
+									<th width="15%"><center>Tanggal Mendapatkan Pelayanan</th>
                   <th width="8%"><center>Pukul</th>
-                  <th width="25%"><center>Tanggal & Waktu Insiden</th>
+                  <th width="15%"><center>Tanggal & Waktu Insiden</th>
                   <th width="8%"><center>Pukul</th>
-									<th width="25%"><center>Insiden</th>
-                  <th width="25%"><center>kronologi</th>
-                  <th width="15%"><center>Jenis Insiden*</th>
-									<th width="10%"><center>Insiden terjadi pada pasien*</th>
-                  <th width="8%"><center>Dampak / Akibat Insiden</th>
-									<th width="8%"><center>Probalitas*</th>
-                  <th width="8%"><center>Orang Pertama Yang Melaporkan Insiden*</th>
-									<th width="10%"><center>Insiden Menyangkut Pasien*</th>
+									<th width="15%"><center>Insiden</th>
+                  <th width="15%"><center>kronologi</th>
+                  <th width="8%"><center>Jenis Insiden*</th>
+									<th width="12%"><center>Insiden terjadi pada pasien*</th>
+                  <th width="10%"><center>Dampak / Akibat Insiden</th>
+									<th width="15%"><center>Probalitas*</th>
+                  <th width="15%"><center>Orang Pertama Yang Melaporkan Insiden*</th>
+									<th width="15%"><center>Insiden Menyangkut Pasien*</th>
                   <th width="10%"><center>Tempat</th>
                   <th width="15%"><center>Unit Terkait</th>
                   <th width="15%"><center>Tindaklanjut yang dilakukan</th>
@@ -96,18 +96,18 @@
                     <td width="15%"><?=$dd->ruangan?></td>
                     <td width="15%"><?=$dd->umur?></td>
                     <td width="15%"><?=$dd->biaya?></td>
-                    <td width="15%"><?=$dd->jk?></td>
-                    <td width="15%"><center><?=date('d-m-Y', strtotime($dd->tanggal_1))?></td>
+                    <td width="8%"><?=$dd->jk?></td>
+                    <td width="10%"><center><?=date('d-m-Y', strtotime($dd->tanggal_1))?></td>
                     <td width="8%"><center><?=$dd->waktu_1?></td>
-                    <td width="15%"><center><?=date('d-m-Y', strtotime($dd->tanggal_2))?></td>
+                    <td width="10%"><center><?=date('d-m-Y', strtotime($dd->tanggal_2))?></td>
                     <td width="8%"><center><?=$dd->waktu_2?></td>
                     <td width="15%"><center><?=$dd->insiden?></td>
 										<td width="15%"><center><?=$dd->kronologi?></td>
 										<td width="8%"><center><?=$dd->jns_insiden?></td>
                     <td width="12%"><center><?=$dd->ins_tjd?></td>
 										<td width="10%"><center><?=$dd->dampak?></td>
-                    <td width="25%"><center><?=$dd->probalitas?></td>
-										<td width="25%"><center><?=$dd->pelapor?></td>
+                    <td width="15%"><center><?=$dd->probalitas?></td>
+										<td width="15%"><center><?=$dd->pelapor?></td>
                     <td width="15%"><center><?=$dd->ins_pas?></td>
 										<td width="10%"><center><?=$dd->tempat?></td>
                     <td width="8%"><center><?=$dd->unit_terkait?></td>

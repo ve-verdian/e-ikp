@@ -813,12 +813,12 @@ class Excel extends CI_Controller {
     $excel->getActiveSheet()->getPageSetup()->setOrientation(PHPExcel_Worksheet_PageSetup::ORIENTATION_LANDSCAPE);
 
     // Set judul file excel nya
-    $excel->getActiveSheet(0)->setTitle("Laporan Insiden Keselamatan Pasien");
+    $excel->getActiveSheet(0)->setTitle("Laporan");
     $excel->setActiveSheetIndex(0);
 
     // Proses file excel
     header('Content-Type: application/vnd.openxmlformats-officedocument.spreadsheetml.sheet');
-    header('Content-Disposition: attachment; filename="Data IKP.xlsx"'); // Set nama file excel nya
+    header('Content-Disposition: attachment; filename="Data-IKP.xlsx"'); // Set nama file excel nya
     header('Cache-Control: max-age=0');
 
     $write = PHPExcel_IOFactory::createWriter($excel, 'Excel2007');

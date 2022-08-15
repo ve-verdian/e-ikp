@@ -5,7 +5,7 @@ $data = $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp LIMIT 1")->row();
 <html>
 <head>
 <title><?= $title; ?></title>
-<link rel="shortcut icon" href="<?=base_url('aset/img/rsia_family.jpeg')?>">
+<link rel="shortcut icon" href="<?=base_url('assets/img/rsia_family.jpeg')?>">
 <style type="text/css" media="print">
 	/* table {border: solid 1px #000; border-collapse: collapse; width: 100%} */
 	tr { border: solid 1px #000}
@@ -27,6 +27,13 @@ $data = $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp LIMIT 1")->row();
 	<section>
 	<tr><td colspan="3" align="center"><b style="font-size: 18px;">FORMULIR LAPORAN INSIDEN KESELAMATAN PASIEN (IKP)<br/>
 		INTERNAL KE KMRKP (SUB KOM KESELAMATAN PASIEN)</b></td></tr>
+	</section>
+	
+	<tr><td colspan="3" align="center"><img src="<?=base_url('assets/img/family.jpg')?>" class="img-fluid" alt="...">
+	</b></td></tr>
+
+	<section>
+	<tr><td colspan="3" align="center"><span style="font-size: 14px;">RAHASIA, TIDAK BOLEH DI FOTOCOPY, DILAPORKAN MAXIMAL, 2X24 JAM</span></td></tr>
 	</section>
 	
 	<section>
@@ -61,36 +68,38 @@ $data = $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp LIMIT 1")->row();
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">12. Tindak lanjut yang dilakukan segera setelah kejadian, dan hasilnya :</b>&nbsp;<?php echo $data->tindaklanjut; ?></td></tr>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">13. Tindak lanjut setelah insiden dilakukan oleh* :</b>&nbsp;<?php echo $data->stlh_dilaku; ?></td> </tr>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">14. Apakah kejadian yang sama pernah terjadi di Unit Kerja Lain?* :</b>&nbsp;<?php echo $data->prnh_tjd; ?></td></tr>
-    <tr><td colspan="3" align="left"><b style="font-size: 14px;">Apabila Ya, isi pada bagian dibawah ini</b></td></tr>
-    <tr><td colspan="3" align="left"><b style="font-size: 14px;">Kapan ? dan Langkah / Tindakan apa yang telah diambil pada unit kerja tersebut untuk mencegah terulangnya kejadian yang sama ?</b></td></tr>
-    </section>
+    <tr><td colspan="3" align="left"><span style="font-size: 14px;">Apabila Ya, isi pada bagian dibawah ini</span></td></tr>
+    <tr><td colspan="3" align="left"><b style="font-size: 14px;">Kapan ? dan Langkah / Tindakan apa yang telah diambil pada unit kerja tersebut untuk mencegah terulangnya kejadian yang sama ?</b> <?php echo $data->no_ulang; ?></td></tr>
+    <tr><td colspan="3" align="left"><b style="font-size: 14px;">Grading Resiko Kejadian*</b>(Diisi oleh atasan pelapor)&nbsp;&nbsp;&nbsp;<?php echo $data->grad_res; ?></td></tr>
+	</section>
 	<!-- <tr><td valign="top" colspan="3" style="text-align: right;">
 		Jakarta, <?php echo tanggal($data->tanggal_1) ?>
 	</td></tr> -->
 	<tr><td valign="top">
     	&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Petugas Yang Membuat Laporan,<br><br><br><br>
-		<?php echo $data->petugas; ?><br>
+		(_______________________________)<br>
 		&nbsp; <i>Nama dan Tanda Tangan</b><br><br>
 	</b></td>
-    <td valign="top" width="155%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td valign="top" width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		 Kepala Ruangan/Unit/Bidang,<br><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <?php echo $data->karu; ?><br>
+         (_______________________________)<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<i>Nama dan Tanda Tangan
 	</td>
-    <td valign="top" width="155%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+    <td valign="top" width="50%">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
     Ketua KMRKP,<br><br><br><br>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
-         <?php echo $data->karu; ?><br>
+	(_______________________________)<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<i>Nama dan Tanda Tangan
 	</td>
     <td valign="top" width="50%">
 		Direktur,<br><br><br><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $data->direktur; ?><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(_______________________________)<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<i>Nama dan Tanda Tangan
 	</td>
     </tr>
+	
 </table>
 </body>
 </html>
