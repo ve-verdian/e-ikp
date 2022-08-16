@@ -40,7 +40,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal" action="<?=base_url('admin/ikp_insert')?>" role="form"
+                <form class="form-horizontal" action="<?=base_url('admin/proses_ikp_insert')?>" role="form"
                   method="post">
 
                   <?php if($this->session->flashdata('msg_berhasil')){ ?>
@@ -316,13 +316,14 @@
   </div>
   <!-- /.content-wrapper -->
   <?php $this->load->view("admin/_layouts/footer.php") ?>
-  <script src="<?= base_url()?>assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+  <script input="text/javascript" src="<?= base_url()?>assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+  <script input="text/javascript" src="<?= base_url()?>assets/bootstrap-datepicker/css/bootstrap-datepicker.js"></script>
   <script type="text/javascript">
   $(".form_datetime").datetimepicker({
     format: 'dd/mm/yyyy',
     autoclose: true,
     todayBtn: true,
-    pickTime: true,
+    pickTime: false,
     minView: 2,
     maxView: 4,
   });
@@ -341,5 +342,14 @@
              });
          });
   </script>
+   <!-- <script type="text/javascript">
+        $(function(){
+            $(".datepicker").datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                todayHighlight: true,
+            });
+        });
+    </script> -->
   </body>
 </html>

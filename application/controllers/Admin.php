@@ -274,7 +274,6 @@ class Admin extends CI_Controller{
 
   public function tabel_barangmasuk()
   {
-		
     $data = array(
               'list_data' => $this->M_admin->select('tb_barang_masuk'),
               'avatar'    => $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'))
@@ -1343,7 +1342,7 @@ class Admin extends CI_Controller{
     redirect(base_url('admin/tabel_ikp'));
   }
 
-  public function ikp_insert()
+  public function proses_ikp_insert()
   {
 		$this->form_validation->set_rules('nama','Nama','trim|required');
     $this->form_validation->set_rules('no_mr','No. MR','trim|required');
@@ -1384,10 +1383,9 @@ class Admin extends CI_Controller{
 			$umur = $this->input->post('umur' ,TRUE);
       $biaya = $this->input->post('biaya' ,TRUE);
 			$jk = $this->input->post('jk' ,TRUE);
-			$ram = $this->input->post('ram' ,TRUE);
-			$tanggal_1 = $this->input->post('tanggal_1' ,TRUE);
+			$tanggal_1 = date_format(date_create($this->input->post('tanggal_1')), 'Y-m-d');
       $waktu_1 = $this->input->post('waktu_1' ,TRUE);
-			$tanggal_2 = $this->input->post('tanggal_2' ,TRUE);
+			$tanggal_2 = date_format(date_create($this->input->post('tanggal_2')), 'Y-m-d');
       $waktu_2 = $this->input->post('waktu_2' ,TRUE);
 			$insiden = $this->input->post('insiden' ,TRUE);
 			$kronologi = $this->input->post('kronologi' ,TRUE);
@@ -1446,13 +1444,13 @@ class Admin extends CI_Controller{
       $this->M_admin->insert('tb_ikp',$data);
  
       $this->session->set_flashdata('msg_berhasil','Data IKP Berhasil di Tambahkan');
-      redirect(base_url('admin/ikp'));
+      redirect(base_url('admin/tabel_ikp'));
     }else {
       $this->load->view('admin/ikp/ikp_insert');
     }
   }
 
-  public function ikp_update()
+  public function proses_update_ikp()
   {
     $this->form_validation->set_rules('nama','Nama','trim|required');
     $this->form_validation->set_rules('no_mr','No. MR','trim|required');
@@ -1486,14 +1484,13 @@ class Admin extends CI_Controller{
 
     if($this->form_validation->run() ==  TRUE)
     {
-			$id_ikp   = $this->input->post('id_ikp' ,TRUE);
+			$id_ikp  = $this->input->post('id_ikp' ,TRUE);
       $nama = $this->input->post('nama' ,TRUE);
 			$no_mr = $this->input->post('no_mr' ,TRUE);
 			$ruangan = $this->input->post('ruangan' ,TRUE);
 			$umur = $this->input->post('umur' ,TRUE);
       $biaya = $this->input->post('biaya' ,TRUE);
 			$jk = $this->input->post('jk' ,TRUE);
-			$ram = $this->input->post('ram' ,TRUE);
 			$tanggal_1 = $this->input->post('tanggal_1' ,TRUE);
       $waktu_1 = $this->input->post('waktu_1' ,TRUE);
 			$tanggal_2 = $this->input->post('tanggal_2' ,TRUE);
@@ -1681,7 +1678,7 @@ class Admin extends CI_Controller{
         $pdf->Output();
     }
 
-    public function print_ikp() {
+    public function ikp_print() {
       $data['title'] = 'Form IKP | Cetak Data IKP';
       $uri = $this->uri->segment(4);
       $data['ikp']	= $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp = '$uri'")->row();	

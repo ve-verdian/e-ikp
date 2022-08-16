@@ -49,8 +49,10 @@
 <!-- AdminLTE dashboard demo (This is only for demo purposes) -->
 <script src="<?= base_url(); ?>assets/dist/js/pages/dashboard.js"></script>
 <!-- Datetimepicker -->
-<script src="<?= base_url(); ?>assets/plugins/datetimepicker/js/bootstrap-datetimepicker.js"></script>
-<!-- DataTables -->
+<!-- <script  input="text/javascript" src="<?= base_url(); ?>assets/plugins/datetimepicker/js/bootstrap-datetimepicker.js"></script> -->
+<script input="text/javascript" src="<?= base_url()?>assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.js"></script>
+<script input="text/javascript" src="<?= base_url()?>assets/bootstrap-datepicker/css/bootstrap-datepicker.js"></script>
+ <!-- DataTables -->
 <script src="<?= base_url(); ?>assets/plugins/datatables/jquery.dataTables.js"></script>
 <script src="<?= base_url(); ?>assets/plugins/datatables-bs4/js/dataTables.bootstrap4.js"></script>
 <script type="text/javascript">
@@ -67,3 +69,12 @@
              });
          });
   </script>
+   <!-- <script type="text/javascript">
+        $(function(){
+            $(".datepicker").datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                todayHighlight: true,
+            });
+        });
+    </script> -->

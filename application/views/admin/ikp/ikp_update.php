@@ -40,7 +40,7 @@
                 </div>
                 <!-- /.card-header -->
                 <!-- form start -->
-                <form class="form-horizontal" action="<?=base_url('admin/ikp_update')?>" role="form"
+                <form class="form-horizontal" action="<?=base_url('admin/proses_update_ikp')?>" role="form"
                   method="post">
 
                   <?php if(validation_errors()){ ?>
@@ -54,6 +54,7 @@
                   <span><b>I. DATA KARAKTERISTIK PASIEN</b></span>
 										<div class="form-group row">
                       <?php foreach($ikp as $dikp){ ?>
+                        <input type="hidden" name="id_ikp" value="<?=$dikp->id_ikp?>">
                         <div class="form-group col-md-6">
                       <label for="nama">Nama</label>
                         <input type="text" name="nama" class="form-control"
@@ -305,5 +306,40 @@
     </div>
     <!-- /.content-wrapper -->
     <?php $this->load->view("admin/_layouts/footer.php") ?>
+    <script input="text/javascript" src="<?= base_url()?>assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script input="text/javascript" src="<?= base_url()?>assets/bootstrap-datepicker/css/bootstrap-datepicker.js"></script>
+    <script>
+    $(".form_datetime").datetimepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true,
+      todayBtn: true,
+      pickTime: false,
+      minView: 2,
+      maxView: 4,
+    });
+    </script>
+    <script type="text/javascript">
+         $(function () {
+             $('#waktu_1').datetimepicker({
+                 format: 'LT'
+             });
+         });
+    </script>
+    <script type="text/javascript">
+          $(function () {
+              $('#waktu_2').datetimepicker({
+                  format: 'LT'
+              });
+          });
+    </script>
+   <!-- <script type="text/javascript">
+        $(function(){
+            $(".datepicker").datepicker({
+                format: 'yyyy-mm-dd',
+                autoclose: true,
+                todayHighlight: true,
+            });
+        });
+    </script> -->
     </body>
 </html>

@@ -28,13 +28,18 @@
   <!-- DataTables -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
   <!-- Date Picker -->
-  <link rel="stylesheet" href="<?= base_url()?>assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css">
-  <link rel="stylesheet" href="<?= base_url()?>assets/plugins/datetimepicker/css/bootstrap-datetimepicker.css">
+  <!-- <link rel="stylesheet" input="text/css" href="<?= base_url()?>assets/plugins/bootstrap-datepicker/dist/css/bootstrap-datepicker.min.css"> -->
+  <link rel="stylesheet" input="text/css" href="<?= base_url()?>assets/plugins/datetimepicker/css/bootstrap-datetimepicker.css">
+  <!-- <link rel="stylesheet" input="text/css" href="<?= base_url()?>assets/bootstrap-datepicker/css/datepicker.css"> -->
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link
     href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Anton|Baloo+Bhai|Be+Vietnam|Black+Ops+One|Carter+One|Fascinate+Inline|Fredoka+One|Modak|Oleo+Script|Paytone+One|Righteous|Russo+One|Ubuntu|Ultra&display=swap"
     rel="stylesheet">
   <link href="https://fonts.googleapis.com/css?family=Acme&display=swap" rel="stylesheet">
+  <!-- Load CSS Bootstrap dari MaxCDN -->
+  <link href="maxcdn.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+  <!-- Load Jquery dari jquery.com -->
+  <link href="code.jquery.com/jquery-3.4.1.js">
 </head>
 <body class="hold-transition sidebar-mini layout-fixed">
