@@ -52,7 +52,7 @@ $ikp = $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp LIMIT 1")->row();
 	<section>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">II. RINCIAN KEJADIAN</b></td></tr>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">1. Tanggal dan Waktu Insiden</b></td></tr>		
-	<tr><td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> <?php echo $ikp->tanggal_2; ?></td><td><b>Pukul : </b><?php echo $ikp->waktu_2; ?> <b>WIB</b></td></tr>
+	<tr><td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> <?php echo $ikp->tanggal_2; ?></td><td><b>Pukul : </b><?php echo $ikp->waktu_2; ?> <b>WIB</b></td></tr>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">2. Insiden : </b> <?php echo $ikp->insiden; ?></td></tr>	
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">3. Kronologi Insiden : </b><?php echo $ikp->kronologi; ?></td></tr>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">4. Jenis Insiden* </b>: <?php echo $ikp->jns_insiden; ?></td></tr>
@@ -70,21 +70,30 @@ $ikp = $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp LIMIT 1")->row();
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">14. Apakah kejadian yang sama pernah terjadi di Unit Kerja Lain?* :</b> <?php echo $ikp->prnh_tjd; ?></td></tr>
     <tr><td colspan="3" align="left"><span style="font-size: 14px;">Apabila Ya, isi pada bagian dibawah ini</span></td></tr>
     <tr><td colspan="3" align="left"><b style="font-size: 14px;">Kapan ? dan Langkah / Tindakan apa yang telah diambil pada unit kerja tersebut untuk mencegah terulangnya kejadian yang sama ?</b> <?php echo $ikp->no_ulang; ?></td></tr>
-    
 	</section>
-	<!-- <tr><td valign="top" colspan="3" style="text-align: right;">
-		Jakarta, <?php ($data->tanggal_1) ?>
-	</td></tr> -->
+
+	<tr><td valign="top" style="text-align: left;">&nbsp;&nbsp;&nbsp;
+		Jakarta, <?=date('d-m-Y', strtotime($ikp->tanggal_1))?> Pukul : <?php echo $ikp->waktu_1; ?> WIB
+	</td>
+	<td valign="top">
+		Jakarta, <?=date('d-m-Y', strtotime($ikp->tanggal_2))?> Pukul : <?php echo $ikp->waktu_1; ?> WIB
+	</td></tr>
 	<tr><td valign="top">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; Petugas,<br><br><br><br><br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(___________________)<br>
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp; <i>Nama & Tanda Tangan</b><br><br><br>
 	</b></td>
     <td valign="top" width="50%">
-		&nbsp;&nbsp;&nbsp;Kepala Ruangan/Unit/Bidang,<br><br><br><br><br>
-        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(___________________)<br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Kepala Ruangan/Unit/Bidang,<br><br><br><br><br>
+        &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(___________________)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;
 		<i>Nama & Tanda Tangan
+	</td></tr>
+	<tr><td valign="top" style="text-align: left;">&nbsp;&nbsp;&nbsp;
+		Jakarta, <?=date('d-m-Y', strtotime($ikp->tanggal_1))?> Pukul : <?php echo $ikp->waktu_1; ?> WIB
+	</td>
+	<td valign="top">
+		Jakarta, <?=date('d-m-Y', strtotime($ikp->tanggal_1))?> Pukul : <?php echo $ikp->waktu_1; ?> WIB
 	</td></tr>
     <tr><td valign="top" width="50%">
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Ketua KMRKP,<br><br><br><br><br>
@@ -92,13 +101,14 @@ $ikp = $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp LIMIT 1")->row();
 		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Nama & Tanda Tangan
 	</td>
     <td valign="top" width="50%">
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Direktur,<br><br><br><br><br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(___________________)<br>
-		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Nama & Tanda Tangan
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Direktur,<br><br><br><br><br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;(___________________)<br>
+		&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<i>Nama & Tanda Tangan
 	</td>
     </tr>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">Grading Resiko Kejadian* </b>(Diisi oleh atasan pelapor) : <?php echo $ikp->grad_res; ?></td></tr>
-	
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">* : Pilih salah satu jawaban</b></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">Tipe Insiden : Diisi setelah dilakukan Investigasi</b></td></tr>
 </table>
 </body>
 </html>
