@@ -71,8 +71,8 @@
                 <?php }else {
 							redirect(base_url());
 						}?>
-                <a href="<?= base_url('login/register'); ?>" class="text-center"
-                  style="font-family: 'Carter One', cursive;">Sign Up</a>
+                <!-- <a href="<?= base_url('login/register'); ?>" class="text-center"
+                  style="font-family: 'Carter One', cursive;">Sign Up</a> -->
               </p>
             </div>
             <!-- /.col -->

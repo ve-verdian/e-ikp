@@ -104,7 +104,7 @@ class Admin extends CI_Controller{
       if( ! $this->upload->do_upload('userpicture'))
       {
         $this->session->set_flashdata('msg_error_gambar', $this->upload->display_errors());
-        $this->load->view('admin/profile',$data);
+        $this->load->view('admin/profile',$config);
       }else{
         $upload_data = $this->upload->data();
         $nama_file = $upload_data['file_name'];
@@ -556,41 +556,41 @@ class Admin extends CI_Controller{
     $this->load->view('admin/perpindahan_barang/form_update',$data);
   }
 
-  public function proses_data_keluar()
-  {
-    $this->form_validation->set_rules('tanggal_keluar','Tanggal Keluar','required');
-    if($this->form_validation->run() === TRUE)
-    {
-      $id_transaksi   = $this->input->post('id_transaksi',TRUE);
-      $tanggal_masuk  = date_format(date_create($this->input->post('tanggal_masuk')), 'Y-m-d');
-      $tanggal_keluar = date_format(date_create($this->input->post('tanggal_keluar')), 'Y-m-d');
-      $divisi         = $this->input->post('divisi',TRUE);
-      $kode_barang    = $this->input->post('kode_barang',TRUE);
-      $nama_barang    = $this->input->post('nama_barang',TRUE);
-      $satuan         = $this->input->post('satuan',TRUE);
-			$jumlah         = $this->input->post('jumlah',TRUE);
-			$unit_order     = $this->input->post('unit_order',TRUE);
+  // public function proses_data_keluar()
+  // {
+  //   $this->form_validation->set_rules('tanggal_keluar','Tanggal Keluar','required');
+  //   if($this->form_validation->run() === TRUE)
+  //   {
+  //     $id_transaksi   = $this->input->post('id_transaksi',TRUE);
+  //     $tanggal_masuk  = date_format(date_create($this->input->post('tanggal_masuk')), 'Y-m-d');
+  //     $tanggal_keluar = date_format(date_create($this->input->post('tanggal_keluar')), 'Y-m-d');
+  //     $divisi         = $this->input->post('divisi',TRUE);
+  //     $kode_barang    = $this->input->post('kode_barang',TRUE);
+  //     $nama_barang    = $this->input->post('nama_barang',TRUE);
+  //     $satuan         = $this->input->post('satuan',TRUE);
+	// 		$jumlah         = $this->input->post('jumlah',TRUE);
+	// 		$unit_order     = $this->input->post('unit_order',TRUE);
 
-      $where = array( 'id_transaksi' => $id_transaksi);
-      $data = array(
-              'id_transaksi' => $id_transaksi,
-              'tanggal_masuk' => $tanggal_masuk,
-              'tanggal_keluar' => $tanggal_keluar,
-              'divisi' => $divisi,
-              'kode_barang' => $kode_barang,
-              'nama_barang' => $nama_barang,
-              'satuan' => $satuan,
-							'jumlah' => $jumlah,
-							'unit_order' => $unit_order
-      );
-        $this->M_admin->insert('tb_barang_keluar',$data);
-        $this->session->set_flashdata('msg_berhasil_keluar','Data Berhasil Keluar');
-        redirect(base_url('admin/tabel_barangmasuk'));
-    }else {
-      $this->load->view('perpindahan_barang/form_update/'.$id_transaksi);
-    }
+  //     $where = array( 'id_transaksi' => $id_transaksi);
+  //     $data = array(
+  //             'id_transaksi' => $id_transaksi,
+  //             'tanggal_masuk' => $tanggal_masuk,
+  //             'tanggal_keluar' => $tanggal_keluar,
+  //             'divisi' => $divisi,
+  //             'kode_barang' => $kode_barang,
+  //             'nama_barang' => $nama_barang,
+  //             'satuan' => $satuan,
+	// 						'jumlah' => $jumlah,
+	// 						'unit_order' => $unit_order
+  //     );
+  //       $this->M_admin->insert('tb_barang_keluar',$data);
+  //       $this->session->set_flashdata('msg_berhasil_keluar','Data Berhasil Keluar');
+  //       redirect(base_url('admin/tabel_barangmasuk'));
+  //   }else {
+  //     $this->load->view('perpindahan_barang/form_update/'.$data);
+  //   }
 
-	}
+	// }
 	
 	public function cetak_barkel(){
 
@@ -1309,7 +1309,6 @@ class Admin extends CI_Controller{
   public function ikp()
   {
 		$data['title'] = 'Form IKP | Tambah Data IKP';
-		// $data['list_divisi'] = $this->M_admin->select('tb_divisi');
     $data['avatar'] = $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
     $this->load->view('admin/ikp/ikp_insert',$data);
   }
@@ -1318,7 +1317,6 @@ class Admin extends CI_Controller{
   {
 		$data['title'] = 'Form IKP | Data IKP';
 		$data['list_data'] = $this->M_admin->select('tb_ikp');
-		// $data['list_divisi'] = $this->M_admin->select('tb_divisi');
     $data['avatar'] = $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
     $this->load->view('admin/tabel/tabel_ikp',$data);
   }
@@ -1328,8 +1326,7 @@ class Admin extends CI_Controller{
 		$data['title'] = 'Form IKP | Update Data IKP';
     $uri = $this->uri->segment(3);
     $where = array('id_ikp' => $uri);
-		$data['ikp'] = $this->M_admin->get_data('tb_ikp', $where);
-		// $data['list_divisi'] = $this->M_admin->select('tb_divisi');
+		$data['list_data'] = $this->M_admin->get_data('tb_ikp', $where);
     $data['avatar'] = $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
     $this->load->view('admin/ikp/ikp_update',$data);
   }
@@ -1680,18 +1677,16 @@ class Admin extends CI_Controller{
 
     public function ikp_print() {
       $data['title'] = 'Form IKP | Cetak Data IKP';
-      $uri = $this->uri->segment(4);
-      $data['ikp']	= $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp = '$uri'")->row();	
-      // $a['datpil2']	= $this->db->query("SELECT kpd_yth FROM t_disposisi WHERE id_surat = '$idu'")->result();	
-      // $a['datpil3']	= $this->db->query("SELECT isi_disposisi, sifat, batas_waktu FROM t_disposisi WHERE id_surat = '$idu'")->result();	
+      $uri = $this->uri->segment(3);
+      $data['list_data']	= $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp = '$uri'")->row();		
       $this->load->view('admin/ikp/print_ikp', $data);
 
       // $data['title'] = 'Form IKP | Cetak Data IKP';
       // $uri = $this->uri->segment(3);
       // $where = array('id_ikp' => $uri);
       // $data['ikp'] = $this->M_admin->get_data('tb_ikp', $where);
-      // $data['avatar'] = $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
       // $this->load->view('admin/ikp/print_ikp',$data);
+
     }
 	 ####################################
             // END IKP

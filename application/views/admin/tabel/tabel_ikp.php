@@ -2,10 +2,10 @@
 <html>
 <head>
   <title><?= $title; ?></title>
-<?php $this->load->view("admin/_layouts/header.php") ?>
+    <?php $this->load->view("admin/_layouts/header.php") ?>
 	<div class="wrapper">
-<?php $this->load->view("admin/_layouts/navbar.php") ?>
-<?php $this->load->view("admin/_layouts/sidebar.php") ?>
+    <?php $this->load->view("admin/_layouts/navbar.php") ?>
+    <?php $this->load->view("admin/_layouts/sidebar.php") ?>
 
 <!-- Content Wrapper. Contains page content -->
 <div class="content-wrapper">
@@ -91,12 +91,12 @@
                   <?php $no = 1;?>
                   <?php foreach($list_data as $dd): ?>
                     <td width="5%"><center><?=$no?></td>
-                    <td width="15%"><?=$dd->nama?></td>
-										<td width="15%"><?=$dd->no_mr?></td>
-                    <td width="15%"><?=$dd->ruangan?></td>
-                    <td width="15%"><?=$dd->umur?></td>
-                    <td width="15%"><?=$dd->biaya?></td>
-                    <td width="8%"><?=$dd->jk?></td>
+                    <td width="15%"><center><?=$dd->nama?></td>
+										<td width="15%"><center><?=$dd->no_mr?></td>
+                    <td width="15%"><center><?=$dd->ruangan?></td>
+                    <td width="15%"><center><?=$dd->umur?></td>
+                    <td width="15%"><center><?=$dd->biaya?></td>
+                    <td width="8%"><center><?=$dd->jk?></td>
                     <td width="10%"><center><?=date('d-m-Y', strtotime($dd->tanggal_1))?></td>
                     <td width="8%"><center><?=$dd->waktu_1?></td>
                     <td width="10%"><center><?=date('d-m-Y', strtotime($dd->tanggal_2))?></td>
@@ -121,8 +121,8 @@
                     <td width="8%"><center><?=$dd->direktur?></td>
                     <td width="8%"><center><?=$dd->grad_res?></td>
                     <!-- <td href="<?php echo base_URL()?>index.php/admin/disposisi_cetak/<?php echo $b->id?>" class="btn btn-info btn-sm" target="_blank" title="Cetak Disposisi"><i class="icon-print icon-white"> </i> Ctk</td> -->
-                    <td width="15%"><center><a type="button" class="btn btn-warning center-block" href="<?=base_url('admin/ikp_print/'.$dd->id_ikp)?>" target="_BLANK" name="btn_cetak" style="margin:auto;"><i class="fas fa-print"  aria-hidden="true"></i></a></td>
-										<td width="15%"><center><a type="button" class="btn btn-success center-block" href="<?=base_url('admin/update_ikp/'.$dd->id_ikp)?>" name="btn_update" style="margin:auto;"><i class="fas fa-edit"  aria-hidden="true"></i></a></td>
+                    <td width="15%"><center><a type="button" class="btn btn-warning center-block" href="<?=base_url('admin/ikp_print/'.$dd->id_ikp)?>" target="_BLANK" name="btn_cetak" style="margin:auto;"><i class="fas fa-print" aria-hidden="true"></i></a></td>
+										<td width="15%"><center><a type="button" class="btn btn-success center-block" href="<?=base_url('admin/update_ikp/'.$dd->id_ikp)?>" name="btn_update" style="margin:auto;"><i class="fas fa-edit" aria-hidden="true"></i></a></td>
 										<td width="15%"><center><a type="button" class="btn btn-danger btn-delete center-block"  href="<?=base_url('admin/delete_ikp/'.$dd->id_ikp)?>" name="btn_delete" style="margin:auto;"><i class="fa fa-trash" aria-hidden="true"></i></a></td>
                 </tr>
 									<?php $no++; ?>

@@ -62,30 +62,30 @@
                       <div class="form-group col-md-6">
                       <label for="nama">Nama</label>
                         <input type="text" name="nama" class="form-control"
-                          id="nama" placeholder="Nama">
+                          id="nama" placeholder="Nama" tabindex="1">
                           <?= form_error('nama', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-3">
                       <label for="no_mr">No. MR</label>
                         <input type="number" name="no_mr" class="form-control"
-                          id="no_mr" placeholder="Nomor Medical Record">
+                          id="no_mr" placeholder="Nomor Medical Record" tabindex="2">
                           <?= form_error('no_mr', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-3">
                       <label for="ruangan">Ruangan</label>
                         <input type="text" name="ruangan" class="form-control"
-                          id="ruangan" placeholder="Ruangan">
+                          id="ruangan" placeholder="Ruangan" tabindex="3">
                           <?= form_error('ruangan', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-1">
                       <label for="umur">Umur</label>
                         <input type="text" name="umur" class="form-control"
-                          id="umur" placeholder="Umur">
+                          id="umur" placeholder="Umur" tabindex="4">
                           <?= form_error('umur', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-3">
                         <label for="biaya">Penanggung Biaya Pasien</label>
-                        <select class="custom-select" name="biaya" id="biaya">
+                        <select class="custom-select" name="biaya" id="biaya" tabindex="5">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="BPJS">BPJS</option>
                           <option value="Jamkesda">Jamkesda</option>
@@ -97,7 +97,7 @@
                       </div>
                       <div class="form-group col-md-2">
                         <label for="jk">Jenis Kelamin</label>
-                        <select class="custom-select" name="jk" id="jk">
+                        <select class="custom-select" name="jk" id="jk" tabindex="6">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="Laki-laki">Laki-laki</option>
                           <option value="Perempuan">Perempuan</option>
@@ -106,13 +106,13 @@
                       <div class="form-group col-md-4">
                         <label for="tanggal_1" >Tanggal Mendapatkan Pelayanan</label>
                         <input type="date" name="tanggal_1"  class="form-control"
-													id="tanggal_1" placeholder="Tanggal Mendapatkan Pelayanan">
+													id="tanggal_1" placeholder="Tanggal Mendapatkan Pelayanan" tabindex="7">
 													<?= form_error('tanggal_1', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-2">
                         <label for="waktu_1">Pukul</label>
                         <input type="time" name="waktu_1"  class="form-control"
-													id="waktu_1" placeholder="Pukul">
+													id="waktu_1" placeholder="Pukul" tabindex="8">
 													<?= form_error('waktu_1', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                   </div>               
@@ -121,29 +121,29 @@
                       <div class="form-group col-md-4">
                         <label for="tanggal_2" >Tanggal dan Waktu Insiden</label>
                         <input type="date" name="tanggal_2"  class="form-control"
-													id="tanggal_2" placeholder="Tanggal dan Waktu Insiden">
+													id="tanggal_2" placeholder="Tanggal dan Waktu Insiden" tabindex="9">
 													<?= form_error('tanggal_2', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-2">
                         <label for="waktu_2" >Pukul</label>
                         <input type="time" name="waktu_2"  class="form-control"
-													id="waktu_2" placeholder="Pukul">
+													id="waktu_2" placeholder="Pukul" tabindex="10">
 													<?= form_error('waktu_2', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="insiden">Insiden</label>
                         <input type="text" name="insiden" class="form-control"
-                          id="insiden" placeholder="Insiden">
+                          id="insiden" placeholder="Insiden" tabindex="11">
                           <?= form_error('insiden', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-12">
                         <label for="kronologi">Kronologi</label>
-                        <input type="text" class="form-control" name="kronologi" id="kronologi" rows="3" placeholder="Sebutkan . . . ">
+                        <input type="text" class="form-control" name="kronologi" id="kronologi" rows="3" placeholder="Sebutkan . . . " tabindex="12">
                         <?= form_error('kronologi', '<small class="text-danger pl-3">', '</small>') ?>
                       </div> 
                       <div class="form-group col-md-6">
                         <label for="jns_insiden">Jenis Insiden*</label>
-                        <select class="custom-select" name="jns_insiden" id="jns_insiden">
+                        <select class="custom-select" name="jns_insiden" id="jns_insiden" tabindex="13">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="Kejadian Nyaris Cedera/KNC (Near Miss)">Kejadian Nyaris Cedera/KNC (Near Miss)</option>
                           <option value="Kejadian Tidak diharapakan/KTD (Adverse Event)">Kejadian Tidak diharapakan/KTD (Adverse Event)</option>
@@ -154,7 +154,7 @@
                       </div>
                       <div class="form-group col-md-6">
                         <label for="ins_tjd">Insiden terjadi pada pasien* : (sesuai kasus penyakit/spesialisasi)</label>
-                        <select class="custom-select" name="ins_tjd" id="ins_tjd">
+                        <select class="custom-select" name="ins_tjd" id="ins_tjd" tabindex="14">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="Anak dan Subspesialisasinya">Anak dan Subspesialisasinya</option>
                           <option value="Penyakit Dalam dan Subspesialisasinya">Penyakit Dalam dan Subspesialisasinya</option>
@@ -165,7 +165,7 @@
                       </div>  
                       <div class="form-group col-md-6">
                         <label for="dampak">Dampak / Akibat Insiden Terhadap Pasien* : (lihat Garding Matriks)</label>
-                        <select class="custom-select" name="dampak" id="dampak">
+                        <select class="custom-select" name="dampak" id="dampak" tabindex="15">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="Kematian">Kematian</option>
                           <option value="Cedera Irreversibel/Cedera Berat">Cedera Irreversibel/Cedera Berat</option>
@@ -176,7 +176,7 @@
                       </div>
                       <div class="form-group col-md-6">
                         <label for="probalitas">Probalitas* : (lihat Garding Matriks)</label>
-                        <select class="custom-select" name="probalitas" id="probalitas">
+                        <select class="custom-select" name="probalitas" id="probalitas" tabindex="16">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="Sangat Jarang">Sangat Jarang</option>
                           <option value="Jarang">Jarang</option>
@@ -187,7 +187,7 @@
                       </div>  
                       <div class="form-group col-md-6">
                         <label for="pelapor">Orang Pertama Yang Melaporkan Insiden*</label>
-                        <select class="custom-select" name="pelapor" id="pelapor">
+                        <select class="custom-select" name="pelapor" id="pelapor" tabindex="17">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="Karyawan : Dokter/Perawat/Petugas Lainnya">Karyawan : Dokter/Perawat/Petugas Lainnya</option>
                           <option value="Pasien">Pasien</option>
@@ -198,7 +198,7 @@
                       </div>
                       <div class="form-group col-md-6">
                         <label for="ins_pas">Insiden Menyangkut Pasien*</label>
-                        <select class="custom-select" name="ins_pas" id="ins_pas">
+                        <select class="custom-select" name="ins_pas" id="ins_pas" tabindex="18">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="Pasien Rawat Inap">Pasien Rawat Inap</option>
                           <option value="Pasien Rawat Jalan">Pasien Rawat Jalan</option>
@@ -211,23 +211,23 @@
                     <div class="form-group col-md-6">
                       <label for="tempat">Tempat Insiden</label>
                       <input type="text" name="tempat" class="form-control" id="tempat"
-												placeholder="Lokasi Kejadian (Tempat Pasien Berada)">
+												placeholder="Lokasi Kejadian (Tempat Pasien Berada)" tabindex="19">
 												<?= form_error('tempat', '<small class="text-danger pl-3">', '</small>') ?>
                     </div>
                     <div class="form-group col-md-6">
                       <label for="unit_terkait">Unit Terkait Yang Menyebabkan Insiden</label>
                       <input type="text" name="unit_terkait" class="form-control" id="unit_terkait"
-												placeholder="Unit Kerja Penyebab">
+												placeholder="Unit Kerja Penyebab" tabindex="20">
 												<?= form_error('unit_terkait', '<small class="text-danger pl-3">', '</small>') ?>
                     </div>
                     <div class="form-group col-md-12">
                       <label for="tindaklanjut">Tindaklanjut yang dilakukan segera setelah kejadian, dan hasilnya</label>
-                      <input type="text" class="form-control" name="tindaklanjut" id="tindaklanjut" rows="3" placeholder="Sebutkan . . . ">
+                      <input type="text" class="form-control" name="tindaklanjut" id="tindaklanjut" rows="3" placeholder="Sebutkan . . . " tabindex="21">
                       <?= form_error('tindaklanjut', '<small class="text-danger pl-3">', '</small>') ?>
                     </div>  
                     <div class="form-group col-md-4">
                         <label for="stlh_dilaku">Tindaklanjut setelah dilakukan oleh</label>
-                        <select class="custom-select" name="stlh_dilaku" id="stlh_dilaku">
+                        <select class="custom-select" name="stlh_dilaku" id="stlh_dilaku" tabindex="22">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="Team">Team</option>
                           <option value="Dokter">Dokter</option>
@@ -237,7 +237,7 @@
                       </div>
                       <div class="form-group col-md-8">
                         <label for="prnh_tjd">Apakah kejadian yang sama pernah terjadi di Unit Kerja lain</label>
-                        <select class="custom-select" name="prnh_tjd" id="prnh_tjd">
+                        <select class="custom-select" name="prnh_tjd" id="prnh_tjd" tabindex="23">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="Ya">Ya</option>
                           <option value="Tidak">Tidak</option>
@@ -246,36 +246,36 @@
                       </div>
                       <div class="form-group col-md-12">
                         <label for="no_ulang">Kapan ? dan Langkah / Tindakan apa yang telah diambil pada Unit Kerja tersebut untuk mencegah terulangnya kejadian yang sama ?</label>
-                        <input type="text" class="form-control" name="no_ulang" id="no_ulang" rows="3" placeholder="Sebutkan . . . ">
+                        <input type="text" class="form-control" name="no_ulang" id="no_ulang" rows="3" placeholder="Sebutkan . . . " tabindex="24">
                         <?= form_error('no_ulang', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-3">
                       <label for="petugas">Petugas yang membuat laporan</label>
                         <input type="text" name="petugas" class="form-control"
-                          id="petugas" placeholder="Petugas yang membuat laporan">
+                          id="petugas" placeholder="Petugas yang membuat laporan" tabindex="25">
                           <?= form_error('petugas', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-3">
                       <label for="karu">Kepala Ruang/Unit/Bidang</label>
                         <input type="text" name="karu" class="form-control"
-                          id="karu" placeholder="Kepala Ruang/Unit/Bidang">
+                          id="karu" placeholder="Kepala Ruang/Unit/Bidang" tabindex="26">
                           <?= form_error('karu', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-3">
                       <label for="kmrkp">Ketua KMRKP</label>
                         <input type="text" name="kmrkp" class="form-control"
-                          id="kmrkp" placeholder="Ketua KMRKP">
+                          id="kmrkp" placeholder="Ketua KMRKP" tabindex="27">
                           <?= form_error('kmrkp', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-3">
                       <label for="direktur">Direktur</label>
                         <input type="text" name="direktur" class="form-control"
-                          id="direktur" placeholder="Direktur">
+                          id="direktur" placeholder="Direktur" tabindex="28">
                           <?= form_error('direktur', '<small class="text-danger pl-3">', '</small>') ?>
                       </div>
                       <div class="form-group col-md-6">
                         <label for="grad_res"><b>Grading Resiko Kejadian*</b> (Diisi oleh atasan pelapor)</label>
-                        <select class="custom-select" name="grad_res" id="grad_res">
+                        <select class="custom-select" name="grad_res" id="grad_res" tabindex="29">
                           <option value="" selected="">-- Pilih --</option>
                           <option value="BIRU">BIRU</option>
                           <option value="HIJAU">HIJAU</option>
@@ -295,7 +295,7 @@
                   <div class="card-footer">
                     <a type="submit" class="btn btn-warning" onclick="history.back(-1)" name="btn_kembali"><i
                         class="far fa-arrow-alt-circle-left" aria-hidden="true"></i> Kembali</a>
-                    <button type="submit" class="btn btn-success"><i class="far fa-save" aria-hidden="true"></i>
+                    <button type="submit" class="btn btn-success" tabindex="30"><i class="far fa-save" aria-hidden="true"></i>
                       Simpan</button>
                     <a type="submit" class="btn btn-primary center-block"
                       href="<?=base_url('admin/tabel_ikp')?>" name="btn_listikp"><i class="fa fa-table"
