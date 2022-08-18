@@ -1326,7 +1326,7 @@ class Admin extends CI_Controller{
 		$data['title'] = 'Form IKP | Update Data IKP';
     $uri = $this->uri->segment(3);
     $where = array('id_ikp' => $uri);
-		$data['list_data'] = $this->M_admin->get_data('tb_ikp', $where);
+		$data['ikp'] = $this->M_admin->get_data('tb_ikp', $where);
     $data['avatar'] = $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
     $this->load->view('admin/ikp/ikp_update',$data);
   }
