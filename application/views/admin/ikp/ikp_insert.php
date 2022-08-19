@@ -49,7 +49,7 @@
                     <strong>Success!</strong><br> <?= $this->session->flashdata('msg_berhasil');?>
                   </div>
                   <?php } ?>
-
+                  
                   <div class="card-body">
                   <span><b>I. DATA KARAKTERISTIK PASIEN</b></span>
                     <div class="form-row">

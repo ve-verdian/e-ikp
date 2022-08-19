@@ -46,23 +46,33 @@
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">II. RINCIAN KEJADIAN</b></td></tr>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">1. Tanggal dan Waktu Insiden</b></td></tr>		
 	<tr><td><b>&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Tanggal &nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;:</b> <?=date('d-m-Y', strtotime($list_data->tanggal_2))?></td><td><b>Pukul : </b><?php echo $list_data->waktu_2; ?> <b>WIB</b></td></tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">2. Insiden : </b> <?php echo $list_data->insiden; ?></td></tr>	
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">3. Kronologi Insiden : </b><?php echo $list_data->kronologi; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">2. Insiden : </b></td></tr>	
+	<tr><td colspan="3" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list_data->insiden; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">3. Kronologi Insiden : </b></td></tr>
+	<tr><td colspan="3" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list_data->kronologi; ?></td></tr>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">4. Jenis Insiden* </b>: <?php echo $list_data->jns_insiden; ?></td></tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">5. Insiden terjadi pada pasien*</b>(sesuai kasus penyakit/spesialisasi) : <?php echo $list_data->ins_tjd; ?></td></tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">6. Dampak / Akibat Insiden Terhadap Pasien* </b></b>(lihat Grading Matriks) : <?php echo $list_data->dampak; ?></td></tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">7. Probalitas* </b>(lihat Grading Matriks) : <?php echo $list_data->probalitas; ?></td> </tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">8. Orang Pertama Yang Melaporkan Insiden* :</b> <?php echo $list_data->pelapor; ?></td></tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">9. Insiden Menyangkut Pasien* :</b> <?php echo $list_data->ins_pas; ?></td></tr>
+	<tr><td colspan="3" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list_data->jns_insiden; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">5. Insiden terjadi pada pasien*</b>(sesuai kasus penyakit/spesialisasi) : </td></tr>
+	<tr><td colspan="3" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list_data->ins_tjd; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">6. Dampak / Akibat Insiden Terhadap Pasien* </b></b>(lihat Grading Matriks) : </td></tr>
+	<tr><td colspan="3" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list_data->dampak; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">7. Probalitas* </b>(lihat Grading Matriks) : </td></tr>
+	<tr><td colspan="3" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list_data->probalitas; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">8. Orang Pertama Yang Melaporkan Insiden* : </b></td></tr>
+	<tr><td colspan="3" align="left">&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list_data->pelapor; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">9. Insiden Menyangkut Pasien* : </b><?php echo $list_data->ins_pas; ?></td></tr>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">10. Tempat Insiden</b></td></tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lokasi kejadian :</b> <?php echo $list_data->tempat; ?></td> </tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Lokasi kejadian : </b><?php echo $list_data->tempat; ?></td></tr>
 	<tr><td colspan="3" align="left"><b style="font-size: 14px;">11. Unit terkait yang menyebabkan insiden</b></td></tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit kerja penyebab :</b> <?php echo $list_data->unit_terkait; ?></td></tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">12. Tindak lanjut yang dilakukan segera setelah kejadian, dan hasilnya :</b> <?php echo $list_data->tindaklanjut; ?></td></tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">13. Tindak lanjut setelah insiden dilakukan oleh* :</b> <?php echo $list_data->stlh_dilaku; ?></td> </tr>
-	<tr><td colspan="3" align="left"><b style="font-size: 14px;">14. Apakah kejadian yang sama pernah terjadi di Unit Kerja Lain?* :</b> <?php echo $list_data->prnh_tjd; ?></td></tr>
-    <tr><td colspan="3" align="left"><span style="font-size: 14px;">Apabila Ya, isi pada bagian dibawah ini</span></td></tr>
-    <tr><td colspan="3" align="left"><b style="font-size: 14px;">Kapan ? dan Langkah / Tindakan apa yang telah diambil pada unit kerja tersebut untuk mencegah terulangnya kejadian yang sama ?</b> <?php echo $list_data->no_ulang; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;Unit kerja penyebab : </b><?php echo $list_data->unit_terkait; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">12. Tindak lanjut yang dilakukan segera setelah kejadian, dan hasilnya : </b></td></tr>
+	<tr><td colspan="3" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list_data->tindaklanjut; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">13. Tindak lanjut setelah insiden dilakukan oleh* :</b></td></tr>
+	<tr><td colspan="3" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list_data->stlh_dilaku; ?></td></tr>
+	<tr><td colspan="3" align="left"><b style="font-size: 14px;">14. Apakah kejadian yang sama pernah terjadi di Unit Kerja Lain?* : </b></td></tr>
+    <tr><td colspan="3" align="left">&nbsp;&nbsp;&nbsp;&nbsp;&nbsp;<?php echo $list_data->prnh_tjd; ?></td></tr>
+	<tr><td colspan="3" align="left"><span style="font-size: 14px;">Apabila Ya, isi pada bagian dibawah ini</span></td></tr>
+    <tr><td colspan="3" align="left"><b style="font-size: 14px;">Kapan ? dan Langkah / Tindakan apa yang telah diambil pada unit kerja tersebut untuk mencegah terulangnya kejadian yang sama ? </b><?php echo $list_data->no_ulang; ?></td></tr>
 	</section>
 
 	<section>

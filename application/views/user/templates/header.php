@@ -1,90 +1,72 @@
-<!DOCTYPE html>
-<html>
+<!doctype html>
+<html lang="en" class="h-100">
+  <head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <meta name="description" content="">
+    <meta name="author" content="Mark Otto, Jacob Thornton, and Bootstrap contributors">
+    <meta name="generator" content="Hugo 0.101.0">
+    <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
+    <title>FORMULIR INSIDEN KESELAMATAN PASIEN</title>
 
-<head>
-  <title>Inventory EDP | User</title>
-  <link rel="shortcut icon" href="<?=base_url('assets/img/rsia_family.jpeg')?>">
-  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
-  <link rel="stylesheet" href="<?= base_url()?>/assets/plugins/fontawesome/css/font-awesome.min.css">
-  <link rel="stylesheet" href="<?= base_url()?>/assets/dist/simple-sidebar/css/simple-sidebar.css">
-  <link rel="stylesheet" href="<?= base_url()?>assets/plugins/datatables.net-bs/css/dataTables.bootstrap.min.css">
-  <link rel="stylesheet" href="<?= base_url()?>/assets/style.css">
-  <script src="https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js"></script>
-  <script src="<?= base_url()?>/assets/dist/simple-sidebar/vendor/bootstrap/js/bootstrap.bundle.min.js"></script>
-  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
-  <script src="<?= base_url()?>assets/plugins/jquery/jquery.min.js"></script>
-  <script src="<?= base_url()?>assets/plugins/datatables.net/js/jquery.dataTables.min.js"></script>
-  <script src="<?= base_url()?>assets/plugins/datatables.net-bs/js/dataTables.bootstrap.min.js"></script>
+    <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/"> -->
+    <link href="<?= base_url(); ?>/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 
-  <style>
-  .bg-dark {
-    background-color: #bb2424 !important;
-  }
+    <style>
+      .bd-placeholder-img {
+        font-size: 1.125rem;
+        text-anchor: middle;
+        -webkit-user-select: none;
+        -moz-user-select: none;
+        user-select: none;
+      }
 
-  .nav-link {
-    color: rgba(255, 255, 255, .5);
-  }
+      @media (min-width: 768px) {
+        .bd-placeholder-img-lg {
+          font-size: 3.5rem;
+        }
+      }
 
-  .display-3 {
-    font-size: 4.5rem;
-    font-weight: 300;
-    line-height: 1.1;
-  }
+      .b-example-divider {
+        height: 3rem;
+        background-color: rgba(0, 0, 0, .1);
+        border: solid rgba(0, 0, 0, .15);
+        border-width: 1px 0;
+        box-shadow: inset 0 .5em 1.5em rgba(0, 0, 0, .1), inset 0 .125em .5em rgba(0, 0, 0, .15);
+      }
 
-  .lead {
-    font-size: 1.25rem;
-    font-weight: 300;
-  }
+      .b-example-vr {
+        flex-shrink: 0;
+        width: 1.5rem;
+        height: 100vh;
+      }
 
-  .text-center {
-    text-align: center !important;
-  }
+      .bi {
+        vertical-align: -.125em;
+        fill: currentColor;
+      }
 
-  .jumbotron {
-    margin-bottom: 2rem;
-    background-color: #e9ecef;
-    border-radius: .3rem;
-  }
+      .nav-scroller {
+        position: relative;
+        z-index: 2;
+        height: 2.75rem;
+        overflow-y: hidden;
+      }
 
-  .mr-auto {
-    margin-right: auto !important;
-  }
+      .nav-scroller .nav {
+        display: flex;
+        flex-wrap: nowrap;
+        padding-bottom: 1rem;
+        margin-top: -1px;
+        overflow-x: auto;
+        text-align: center;
+        white-space: nowrap;
+        -webkit-overflow-scrolling: touch;
+      }
+    </style>
 
-  .navbar-brand {
-    color: #fff;
-  }
-  </style>
-</head>
-
-<body>
-  <!-- navbar -->
-  <nav class="navbar navbar-inverse navbar-fixed-top bg-dark">
-    <div class="container">
-      <div class="navbar-header">
-        <a class="navbar-brand" href="<?= base_url('user')?>">Inventory EDP</a>
-      </div>
-      <ul class="nav navbar-nav mr-auto">
-        <!-- <li><a class="nav-link" href="#">Home</a></li> -->
-        <li class="dropdown"><a class="bg-dark dropdown-toggle" data-toggle="dropdown" href="#"><i
-              class="fa fa-database" aria-hidden="true"></i> Data Barang<span class="caret"></span></a>
-          <ul class="dropdown-menu">
-            <li><a href="<?=base_url('user/tabel_barangmasuk');?>">Data Barang Masuk</a></li>
-            <li><a href="<?=base_url('user/tabel_barangkeluar');?>">Data Barang Keluar</a></li>
-            <!-- <li><a href="<?=base_url('user/tabel_komputer');?>">Data Komputer</a></li>
-            <li><a href="<?=base_url('user/tabel_printer');?>">Data Printer</a></li>
-            <li><a href="<?=base_url('user/test');?>">Data Sample</a></li> -->
-            <!-- <li><a href="#">Tabel Gudang 3</a></li> -->
-          </ul>
-        </li>
-        <!-- <li><a class="nav-link" href="#"><i class="fa fa-book" aria-hidden="true"></i> Page 2</a></li>
-            <li><a class="nav-link" href="#"><i class="fa fa-address-book" aria-hidden="true"></i> Page 3</a></li> -->
-      </ul>
-      <ul class="nav navbar-nav navbar-right">
-        <!-- <li><a class="nav-link">Last Login : <?=$this->session->userdata('last_login')?></a></li>             -->
-        <li><a class="nav-link" href="<?= base_url('user/setting') ?>"><i class="fa fa-cogs" aria-hidden="true"></i>
-            Setting</a></li>
-        <li><a class="nav-link" href="<?= base_url('user/signout')?>"><i class="fas fa-sign-out-alt"
-              aria-hidden="true"></i> Sign Out</a></li>
-      </ul>
-    </div>
-  </nav>
+    
+    <!-- Custom styles for this template -->
+    <link href="cover.css" rel="stylesheet">
+  </head>
+  <body class="d-flex h-100 text-center text-bg-dark">
