@@ -83,15 +83,17 @@
     <div class="card card-danger">
     <div class="card-body">
       <div class="col-md-11 col-lg-12">
+
       <form class="form-horizontal" action="<?=base_url('user/proses_ikp_insert')?>" role="form" method="post">
+      
           <?php if($this->session->flashdata('msg_berhasil')){ ?>
             <div class="alert alert-success alert-dismissible" style="width:91%">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
               <strong>Success!</strong><br> <?= $this->session->flashdata('msg_berhasil');?>
             </div>
           <?php } ?>
+
         <h4 class="mb-3"><b>I. DATA KARAKTERISTIK PASIEN</h4>
-        
           <div class="row g-3">
             <div class="form-group col-md-3">
               <label for="nama" class="form-label">Nama</label>
@@ -123,7 +125,7 @@
 
             <div class="form-group col-md-3">
               <label for="biaya" class="form-label">Penanggung Biaya Pasien</label>
-                <select class="form-select" id="biaya" required>
+                <select class="form-select" id="biaya" tabindex="5">
                   <option value="" selected="">-- Pilih --</option>
                   <option value="BPJS">BPJS</option>
                   <option value="Jamkesda">Jamkesda</option>
@@ -136,7 +138,7 @@
 
             <div class="form-group col-md-3">
               <label for="jk" class="form-label">Jenis Kelamin</label>
-              <select class="form-select" id="jk" required>
+              <select class="form-select" id="jk" tabindex="6">
                 <option value="" selected="">-- Pilih --</option>
                 <option value="Laki-laki">Laki-laki</option>
                 <option value="Perempuan">Perempuan</option>
@@ -189,7 +191,7 @@
             </div>
 
             <div class="form-group col-md-4">
-              <label for="cc-expiration" class="form-label">Jenis Insiden*</label>
+              <label for="jns_insiden" class="form-label">Jenis Insiden*</label>
                 <select class="form-select" name="jns_insiden" id="jns_insiden" tabindex="13">
                   <option value="" selected="">-- Pilih --</option>
                   <option value="Kejadian Nyaris Cedera/KNC (Near Miss)">Kejadian Nyaris Cedera/KNC (Near Miss)</option>
@@ -201,7 +203,7 @@
             </div>
 
             <div class="form-group col-md-8">
-              <label for="cc-cvv" class="form-label">Insiden terjadi pada pasien* : (sesuai kasus penyakit/spesialisasi)</label>
+              <label for="ins_tjd" class="form-label">Insiden terjadi pada pasien* : (sesuai kasus penyakit/spesialisasi)</label>
                 <select class="form-select" name="ins_tjd" id="ins_tjd" tabindex="14">
                   <option value="" selected="">-- Pilih --</option>
                   <option value="Anak dan Subspesialisasinya">Anak dan Subspesialisasinya</option>
@@ -350,8 +352,8 @@
             </div>
 
           <div class="card-footer">
-            <button type="submit" class="btn btn-success" tabindex="30"><i class="far fa-save" aria-hidden="true"></i>Simpan</button>
             <a type="submit" href="<?=base_url('user/')?>" class="btn btn-warning" onclick="history.back(-1)" name="btn_kembali"><i class="far fa-arrow-alt-circle-left" aria-hidden="true"></i> Kembali</a>
+            <button type="submit" class="btn btn-success" tabindex="30"><i class="far fa-save" aria-hidden="true"></i>Simpan</button>
             <a type="submit" href="<?=base_url('user/tabel_ikp')?>" class="btn btn-danger" onclick="history.back(-1)" name="btn_kembali"><i class="far fa-arrow-alt-circle-left" aria-hidden="true"></i> List IKP</a>
           </div>
         </form>
@@ -361,7 +363,33 @@
   </main>
 </div>
 
-    <script src="../assets/dist/js/bootstrap.bundle.min.js"></script>
-    <script src="form-validation.js"></script>
+    <script input="text/javascript" src="<?= base_url()?>/assets/dist/js/bootstrap.bundle.min.js"></script>
+    <!-- <script src="form-validation.js"></script> -->
+    <script input="text/javascript" src="<?= base_url()?>assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
+    <script input="text/javascript" src="<?= base_url()?>assets/bootstrap-datepicker/css/bootstrap-datepicker.js"></script>
+    <script type="text/javascript">
+    $(".form_datetime").datetimepicker({
+      format: 'dd/mm/yyyy',
+      autoclose: true,
+      todayBtn: true,
+      pickTime: false,
+      minView: 2,
+      maxView: 4,
+    });
+    </script>
+    <script type="text/javascript">
+          $(function () {
+              $('#waktu_1').datetimepicker({
+                  format: 'LT'
+              });
+          });
+    </script>
+    <script type="text/javascript">
+          $(function () {
+              $('#waktu_2').datetimepicker({
+                  format: 'LT'
+              });
+          });
+    </script>
   </body>
 </html>

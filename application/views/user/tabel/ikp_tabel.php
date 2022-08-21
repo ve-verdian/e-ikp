@@ -117,14 +117,14 @@ p {
 </style>
 <div class="page-content page-container" id="page-content">
   <div class="padding">
-    <div class="row container d-flex justify-content-center">
+    <!-- <div class="row container d-flex justify-content-center"> -->
 
 <div class="col-lg-12 grid-margin stretch-card">
   <div class="card">
       <div class="card-body">
                 <div class="card-header">
               <h3><b>Laporan Insiden Keselamatan Pasien</b></h3> 
-            <a type="submit" href="<?=base_url('user/user_ikp')?>" class="btn btn-warning" name="btn_kembali"><i class="far fa-arrow-alt-circle-left" aria-hidden="true"></i> Kembali</a>
+            <a type="submit" href="<?=base_url('user/ikp')?>" class="btn btn-warning" name="btn_kembali"><i class="far fa-arrow-alt-circle-left" aria-hidden="true"></i> Kembali</a>
             </div>
                   <div class="table-responsive">
                   <table id="example1" class="table table-responsive table-bordered table-striped">
