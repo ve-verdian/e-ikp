@@ -1,11 +1,9 @@
 <?php
 class M_user extends CI_Model{
 
-
-  public function update_password($tabel,$where,$data)
+  public function insert($tabel,$data)
   {
-    $this->db->where($where);
-    $this->db->update($tabel,$data);
+    $this->db->insert($tabel,$data);
   }
 
   public function select($tabel)
@@ -13,10 +11,6 @@ class M_user extends CI_Model{
     return $this->db->select()
                     ->from($tabel)
                     ->get()->result();
-  }
-  public function insert($tabel,$data)
-  {
-    $this->db->insert($tabel,$data);
   }
 
   public function cek_jumlah($tabel,$id_transaksi)
@@ -63,6 +57,12 @@ class M_user extends CI_Model{
     $this->db->set("jumlah","jumlah - $jumlah");
     $this->db->where('id_transaksi',$id_transaksi);
     $this->db->update($tabel);
+  }
+
+  public function update_password($tabel,$where,$data)
+  {
+    $this->db->where($where);
+    $this->db->update($tabel,$data);
   }
 
   public function get_data_gambar($tabel,$username)

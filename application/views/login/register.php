@@ -30,7 +30,7 @@
       <a href="#" style="font-family: 'Black Ops One', cursive;">FORM IKP</a>
     </div>
 
-    <div class="card">
+    <div class="card shadow">
       <div class="card-body register-card-body">
         <h4 class="login-box-msg" style="font-family: 'Modak', cursive;">Daftar</h4>
         <?php if($this->session->flashdata('msg')){ ?>

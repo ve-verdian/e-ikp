@@ -45,12 +45,6 @@
                     <p>Data IKP</p>
                   </a>
                 </li>
-                <!-- <li class="nav-item">
-                <a href="<?= base_url('admin/tabel_barangmasuk') ?>" class="nav-link">
-                  <i class="far fa-circle nav-icon"></i>
-                  <p>Data Barang Masuk</p>
-                </a>
-            </li> -->
               </ul>
             </li>
             <li class="nav-item has-treeview">
@@ -69,7 +63,7 @@
                 </li>
               </ul>
             <li class="nav-header" style="font-family: 'Fredoka One', cursive;">SETTING</li>
-            <!-- <li class="nav-item">
+            <li class="nav-item">
               <a href="<?= base_url('admin/profile')?>" class="nav-link">
                 <i class="nav-icon fa fa-cogs"></i>
                 <p style="font-family: 'Be Vietnam', sans-serif;">Profile</p>
@@ -80,7 +74,7 @@
                 <i class="nav-icon fas fa-users"></i>
                 <p style="font-family: 'Be Vietnam', sans-serif;">Users</p>
               </a>
-            </li> -->
+            </li>
             <li class="nav-item">
               <a href="<?= base_url('admin/signout'); ?>" class="nav-link">
                 <i class="nav-icon fas fa-sign-out-alt"></i>

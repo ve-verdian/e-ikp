@@ -13,12 +13,6 @@ class Admin extends CI_Controller{
     if($this->session->userdata('status') == 'login' && $this->session->userdata('role') == 1){
 			$data['title'] = 'Form IKP | Dashboard';
       $data['avatar'] = $this->M_admin->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
-      $data['stokBarangMasuk'] = $this->M_admin->sum('tb_barang_masuk','jumlah');
-      $data['stokBarangKeluar'] = $this->M_admin->sum('tb_barang_keluar','jumlah');      
-			// $data['dataUser'] = $this->M_admin->numrows('user');
-			// $data['dataDivisi'] = $this->M_admin->numrows('tb_divisi');
-			$data['dataPC'] = $this->M_admin->numrows('tb_pc');
-			$data['dataPrinter'] = $this->M_admin->numrows('tb_printer');
       $data['dataIkp'] = $this->M_admin->numrows('tb_ikp');
       $this->load->view('admin/index',$data);
     }else {
@@ -144,6 +138,7 @@ class Admin extends CI_Controller{
   ####################################
            // End Profile
   ####################################
+
 
   ####################################
               // Users
@@ -516,11 +511,12 @@ class Admin extends CI_Controller{
 
         $pdf->Output();
     }
-	 ####################################
+	#####################################
             // END KOMPUTER
 	####################################
 
-    ####################################
+
+  ####################################
               // IKP
   ####################################
 
@@ -898,13 +894,6 @@ class Admin extends CI_Controller{
       $uri = $this->uri->segment(3);
       $data['list_data']	= $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp = '$uri'")->row();		
       $this->load->view('admin/ikp/print_ikp', $data);
-
-      // $data['title'] = 'Form IKP | Cetak Data IKP';
-      // $uri = $this->uri->segment(3);
-      // $where = array('id_ikp' => $uri);
-      // $data['ikp'] = $this->M_admin->get_data('tb_ikp', $where);
-      // $this->load->view('admin/ikp/print_ikp',$data);
-
     }
 	 ####################################
             // END IKP

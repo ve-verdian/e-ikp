@@ -15,9 +15,9 @@ class User extends CI_Controller
   {
     if($this->session->userdata('status') == 'login' && $this->session->userdata('role') == 0)
     {
-      $this->load->view('user/templates/header.php');
-      $this->load->view('user/cover/index');
-      $this->load->view('user/templates/footer.php');
+      $this->load->view('user/templates/header');
+      $this->load->view('user/cover/cover');
+      $this->load->view('user/templates/footer');
     }else {
       $this->load->view('login/login');
     }
@@ -38,9 +38,9 @@ class User extends CI_Controller
       $data['token_generate'] = $this->token_generate();
       $this->session->set_userdata($data);
 
-      $this->load->view('user/templates/header.php');
+      $this->load->view('user/templates/header');
       $this->load->view('user/setting',$data);
-      $this->load->view('user/templates/footer.php');
+      $this->load->view('user/templates/footer');
   }
 
   public function proses_new_password()
@@ -87,15 +87,13 @@ class User extends CI_Controller
   {
 		$data['title'] = 'Form IKP | Tambah Data IKP';
     $data['avatar'] = $this->M_user->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
-    $this->load->view('user/checkout/index',$data);
+    $this->load->view('user/checkout/checkout',$data);
   }
 
   public function tabel_ikp()
   {
-    // $this->load->view('user/templates/header.php');
     $data['list_data'] = $this->M_user->select('tb_ikp');
     $this->load->view('user/tabel/ikp_tabel',$data);
-    // $this->load->view('user/templates/footer.php');
   }
 
   public function proses_ikp_insert()
@@ -202,7 +200,7 @@ class User extends CI_Controller
       $this->session->set_flashdata('msg_berhasil','Data IKP Berhasil di Tambahkan');
       redirect(base_url('user/tabel_ikp'));
     }else {
-      $this->load->view('user/checkout/index');
+      $this->load->view('user/checkout/checkout');
     }
   }
 }

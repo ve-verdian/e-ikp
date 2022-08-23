@@ -124,6 +124,14 @@ p {
       <div class="card-body shadow">
                 <div class="card-header">
               <h3><b>Laporan Insiden Keselamatan Pasien</b></h3> 
+
+              <?php if($this->session->flashdata('msg_berhasil')){ ?>
+                <div class="alert alert-success alert-dismissible" style="width:100%">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong><br> <?= $this->session->flashdata('msg_berhasil');?>
+               	</div>
+              <?php } ?>
+
             <a type="submit" href="<?=base_url('user/ikp')?>" class="btn btn-warning" name="btn_kembali"><i class="far fa-arrow-alt-circle-left" aria-hidden="true"></i> Kembali</a>
             </div>
                   <div class="table-responsive">
@@ -215,49 +223,49 @@ p {
                 </div>
               </div>
             </div>
-            
-            </div>
-              </div>
-            </div>
+          </div>
+        </div>
+      </div>
 
-            
-            <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" rel="stylesheet"></script>
-              <script href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet"></script>
+      <script href="https://stackpath.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.bundle.min.js" rel="stylesheet"></script>
+      <script href="https://cdnjs.cloudflare.com/ajax/libs/jquery/3.2.1/jquery.min.js" rel="stylesheet"></script>
+
+            <script>
+            jQuery(document).ready(function($){
+                  $('.btn-delete').on('click',function(){
+                      var getLink = $(this).attr('href');
+                      swal({
+                              title: 'Delete Data',
+                              text: 'Yakin Ingin Menghapus Data ?',
+                              html: true,
+                              confirmButtonColor: '#d9534f',
+                              showCancelButton: true,
+                              },function(){
+                              window.location.href = getLink
+                          });
+                      return false;
+                  });
+              });
+              </script>
 
               <script>
-jQuery(document).ready(function($){
-      $('.btn-delete').on('click',function(){
-          var getLink = $(this).attr('href');
-          swal({
-                  title: 'Delete Data',
-                  text: 'Yakin Ingin Menghapus Data ?',
-                  html: true,
-                  confirmButtonColor: '#d9534f',
-                  showCancelButton: true,
-                  },function(){
-                  window.location.href = getLink
+              $(function () {
+                $("#example1").DataTable();
+                $('#example2').DataTable({
+                  "paging": true,
+                  "lengthChange": false,
+                  "searching": false,
+                  "ordering": true,
+                  "info": true,
+                  "autoWidth": false,
+                })
+              $('#example2').DataTable({
+                  'paging'      : true,
+                  'lengthChange': false,
+                  'searching'   : false,
+                  'ordering'    : true,
+                  'info'        : true,
+                  'autoWidth'   : false
+                })
               });
-          return false;
-      });
-  });
-	
-  $(function () {
-    $("#example1").DataTable();
-    $('#example2').DataTable({
-      "paging": true,
-      "lengthChange": false,
-      "searching": false,
-      "ordering": true,
-      "info": true,
-      "autoWidth": false,
-    })
-	$('#example2').DataTable({
-      'paging'      : true,
-      'lengthChange': false,
-      'searching'   : false,
-      'ordering'    : true,
-      'info'        : true,
-      'autoWidth'   : false
-    })
-  });
-</script>
+              </script>
