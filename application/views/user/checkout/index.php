@@ -80,8 +80,8 @@
       <img class="d-block mx-auto mb-4" src="<?= base_url(); ?>/assets/img/rsia_family.jpeg" alt="" width="72" height="72">
       <h2><b>SILAHKAN ISI FORMULIR DIBAWAH INI</b></h2> 
     </div>
-    <div class="card card-danger">
-    <div class="card-body">
+    <div class="card card-header shadow p-3 bg-light rounded">
+    <div class="card-body shadow-none p-3 bg-light rounded">
       <div class="col-md-11 col-lg-12">
 
       <form class="form-horizontal" action="<?=base_url('user/proses_ikp_insert')?>" role="form" method="post">
@@ -275,15 +275,13 @@
 							<?= form_error('unit_terkait', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
        
-
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-8">
               <label for="tindaklanjut" class="form-label">Tindaklanjut yang dilakukan segera setelah kejadian, dan hasilnya</label>
               <input type="text" class="form-control" name="tindaklanjut" id="tindaklanjut" rows="3" placeholder="Sebutkan . . . " tabindex="21">
               <?= form_error('tindaklanjut', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
         
-
-          <div class="form-group col-md-6">
+          <div class="form-group col-md-4">
               <label for="stlh_dilaku" class="form-label">Tindaklanjut setelah dilakukan oleh</label>
                 <select class="form-select" name="stlh_dilaku" id="stlh_dilaku" tabindex="22">
                   <option value="" selected="">-- Pilih --</option>

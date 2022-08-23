@@ -31,7 +31,7 @@
       <a href="#" style="font-family: 'Black Ops One', cursive;">FORM IKP</a>
     </div>
     <!-- /.login-logo -->
-    <div class="card">
+    <div class="card shadow">
       <div class="card-body login-card-body">
         <h4 class="login-box-msg" font color="#DC143C" style="font-family: 'Modak', cursive;">Masuk</h4>
 

@@ -8,7 +8,7 @@
     <link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css" rel="stylesheet">
 
 <style>
-   body {
+   /* body {
      background-color: #f9f9fa
  }
 
@@ -112,7 +112,7 @@ p {
     line-height: 1;
     padding: .375rem .5625rem;
     font-weight: normal;
-}
+} */
  
 </style>
 <div class="page-content page-container" id="page-content">
@@ -121,7 +121,7 @@ p {
 
 <div class="col-lg-12 grid-margin stretch-card">
   <div class="card">
-      <div class="card-body">
+      <div class="card-body shadow">
                 <div class="card-header">
               <h3><b>Laporan Insiden Keselamatan Pasien</b></h3> 
             <a type="submit" href="<?=base_url('user/ikp')?>" class="btn btn-warning" name="btn_kembali"><i class="far fa-arrow-alt-circle-left" aria-hidden="true"></i> Kembali</a>
