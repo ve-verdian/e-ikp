@@ -85,7 +85,7 @@
       <div class="col-md-11 col-lg-12">
 
       <form class="form-horizontal" action="<?=base_url('user/proses_ikp_insert')?>" role="form" method="post">
-      
+
           <?php if($this->session->flashdata('msg_berhasil')){ ?>
             <div class="alert alert-success alert-dismissible" style="width:91%">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
@@ -125,7 +125,7 @@
 
             <div class="form-group col-md-3">
               <label for="biaya" class="form-label">Penanggung Biaya Pasien</label>
-                <select class="form-select" id="biaya" tabindex="5">
+                <select class="form-select" name="biaya" id="biaya" tabindex="5">
                   <option value="" selected="">-- Pilih --</option>
                   <option value="BPJS">BPJS</option>
                   <option value="Jamkesda">Jamkesda</option>
@@ -138,7 +138,7 @@
 
             <div class="form-group col-md-3">
               <label for="jk" class="form-label">Jenis Kelamin</label>
-              <select class="form-select" id="jk" tabindex="6">
+              <select class="form-select" name="jk" id="jk" tabindex="6">
                 <option value="" selected="">-- Pilih --</option>
                 <option value="Laki-laki">Laki-laki</option>
                 <option value="Perempuan">Perempuan</option>
@@ -178,7 +178,7 @@
             </div>
 
             <div class="form-group col-md-3">
-              <label for="cc-insiden" class="form-label">Insiden</label>
+              <label for="insiden" class="form-label">Insiden</label>
               <input type="text" name="insiden" class="form-control"
               id="insiden" placeholder="Insiden" tabindex="11">
               <?= form_error('insiden', '<small class="text-danger pl-3">', '</small>') ?>
@@ -187,7 +187,7 @@
             <div class="form-group col-md-4">
               <label for="kronologi" class="form-label">Kronologi</label>
               <input type="text" class="form-control" name="kronologi" id="kronologi" rows="3" placeholder="Sebutkan . . . " tabindex="12">
-                        <?= form_error('kronologi', '<small class="text-danger pl-3">', '</small>') ?> 
+              <?= form_error('kronologi', '<small class="text-danger pl-3">', '</small>') ?> 
             </div>
 
             <div class="form-group col-md-4">
@@ -362,7 +362,6 @@
 </div>
 
     <script input="text/javascript" src="<?= base_url()?>/assets/dist/js/bootstrap.bundle.min.js"></script>
-    <!-- <script src="form-validation.js"></script> -->
     <script input="text/javascript" src="<?= base_url()?>assets/plugins/datetimepicker/js/bootstrap-datetimepicker.min.js"></script>
     <script input="text/javascript" src="<?= base_url()?>assets/bootstrap-datepicker/css/bootstrap-datepicker.js"></script>
     <script type="text/javascript">

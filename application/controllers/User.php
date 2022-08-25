@@ -83,7 +83,7 @@ class User extends CI_Controller
         // DATA IKP
   ####################################
 
-  public function ikp()
+  public function insert_ikp()
   {
 		$data['title'] = 'Form IKP | Tambah Data IKP';
     $data['avatar'] = $this->M_user->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
@@ -196,7 +196,7 @@ class User extends CI_Controller
 						'grad_res' => $grad_res
       );
       $this->M_user->insert('tb_ikp',$data);
- 
+
       $this->session->set_flashdata('msg_berhasil','Data IKP Berhasil di Tambahkan');
       redirect(base_url('user/tabel_ikp'));
     }else {

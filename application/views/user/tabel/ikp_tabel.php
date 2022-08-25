@@ -132,7 +132,7 @@ p {
                	</div>
               <?php } ?>
 
-            <a type="submit" href="<?=base_url('user/ikp')?>" class="btn btn-warning" name="btn_kembali"><i class="far fa-arrow-alt-circle-left" aria-hidden="true"></i> Kembali</a>
+            <a type="submit" href="<?=base_url('user/insert_ikp')?>" class="btn btn-warning" name="btn_kembali"><i class="far fa-arrow-alt-circle-left" aria-hidden="true"></i> Kembali</a>
             </div>
                   <div class="table-responsive">
                   <table id="example1" class="table table-responsive table-bordered table-striped">

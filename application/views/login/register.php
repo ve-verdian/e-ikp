@@ -22,28 +22,48 @@
   <link
     href="https://fonts.googleapis.com/css?family=Alfa+Slab+One|Anton|Baloo+Bhai|Be+Vietnam|Black+Ops+One|Carter+One|Fascinate+Inline|Fredoka+One|Modak|Oleo+Script|Paytone+One|Righteous|Russo+One|Ubuntu|Ultra&display=swap"
     rel="stylesheet">
+   
+   <style>
+    .divider:after,
+    .divider:before {
+    content: "";
+    flex: 1;
+    height: 1px;
+    background: #eee;
+    }
+    .h-custom {
+    height: calc(100% - 50px);
+    }
+    @media (max-width: 500px) {
+    .h-custom {
+    height: 100%;
+    }
+    }
+  </style>
+
 </head>
 
-<body class="hold-transition register-page">
-  <div class="register-box">
-    <div class="register-logo">
-      <a href="#" style="font-family: 'Black Ops One', cursive;">FORM IKP</a>
-    </div>
+<section class="vh-100">
+  <div class="container-fluid h-custom">
+    <div class="row d-flex justify-content-center align-items-center h-100">
+      <div class="col-md-12 col-lg-6 col-xl-3">
+        <img src="<?=base_url('assets/img/family.jpg')?>"
+          class="img-fluid" alt="Sample image">
+      </div>
+      <div class="col-md-8 col-lg-6 col-xl-4 offset-xl-1">
+      
+        <form action="<?= base_url('register/proses_register')?>" class="login" method="post">
+       
+      <div class="col-8">  
+        <div class="h4 text-danger border-danger" font color="#DC143C" style="font-family: Bahnschrift SemiBold;">
+          Register
+        </div>
+      </div>
 
-    <div class="card shadow">
-      <div class="card-body register-card-body">
-        <h4 class="login-box-msg" style="font-family: 'Modak', cursive;">Daftar</h4>
         <?php if($this->session->flashdata('msg')){ ?>
         <div class="alert alert-warning alert-dismissible">
           <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
           <strong>Warning!</strong><br> <?= $this->session->flashdata('msg');?>
-        </div>
-        <?php } ?>
-
-        <?php if($this->session->flashdata('msg_terdaftar')){ ?>
-        <div class="alert alert-success alert-dismissible">
-          <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-          <strong>Success</strong><br> <?= $this->session->flashdata('msg_terdaftar');?>
         </div>
         <?php } ?>
 
@@ -54,71 +74,46 @@
         </div>
         <?php } ?>
 
-        <form action="<?= base_url('register/proses_register')?>" class="login" method="post">
-          <div class="input-group mb-3">
-            <input type="text" name="username" id="username" class="form-control" style="font-family: 'Be Vietnam', sans-serif;"
-              placeholder="Username" autofocus required="">
+           <!-- Username -->
+           <div class="col-8">
+           <label class="form-label" for="username">Username</label>
+            <input type="text" name="username" id="username" class="form-control form-control-lg"
+              placeholder="Masukan username" autofocus required=""  />
               <?= form_error('username', '<small class="text-danger pl-3">', '</small>'); ?>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-user"></span>
-              </div>
-            </div>
           </div>
-          <div class="input-group mb-3">
-            <input type="email" name="email" id="email" class="form-control" style="font-family: 'Be Vietnam', sans-serif;"
-              placeholder="Email" autofocus required="">
+
+          <!-- Email input -->
+          <div class="col-8">
+          <label class="form-label" for="email">Alamat Email</label>
+            <input type="email" name="email" id="email" class="form-control form-control-lg"
+              placeholder="Masukan email" autofocus required="" />
               <?= form_error('email', '<small class="text-danger pl-3">', '</small>'); ?>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-envelope"></span>
-              </div>
-            </div>
           </div>
-          <div class="input-group mb-3">
-            <input type="password" name="password" id="password" class="form-control" style="font-family: 'Be Vietnam', sans-serif;"
-              placeholder="Password" autofocus required="">
+
+          <!-- Password input -->
+          <div class="col-8">
+          <label class="form-label" for="form3Example4">Password</label>
+            <input type="password" name="password" id="password" class="form-control form-control-lg"
+              placeholder="Masukan password" autofocus required="" />
               <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-              </div>
-            </div>
           </div>
-          <div class="input-group mb-3">
-            <input type="password" name="confirm_password" id="confirm_password" class="form-control"
-              style="font-family: 'Be Vietnam', sans-serif;" placeholder="Confirm password" autofocus required="">
+
+           <!-- Confirm Password -->
+           <div class="col-8">
+           <label class="form-label" for="confirm_password">Konfirmasi Passsword</label>
+            <input type="password" name="confirm_password" id="confirm_password" class="form-control form-control-lg"
+              placeholder="Konfirmasi password" autofocus required="" />
               <?= form_error('confirm_password', '<small class="text-danger pl-3">', '</small>'); ?>
-            <div class="input-group-append">
-              <div class="input-group-text">
-                <span class="fas fa-lock"></span>
-              </div>
-            </div>
           </div>
-          <div class="row">
-            <div class="col-8">
-              <a href="<?= base_url('login'); ?>" class="text-center" style="font-family: 'Carter One', cursive;">Sign
-                In</a>
-            </div>
-            <!-- /.col -->
-            <div class="col-4">
-              <button type="submit" class="btn btn-primary btn-block btn-flat"
-                style="font-family: 'Carter One', cursive;">Sign Up</button>
-            </div>
-            <!-- /.col -->
+
+          <div class="col-8 mt-4">
+              <button type="submit" class="btn btn-danger btn-block btn-flat" aria-hidden="true"
+                style="font-family: 'Carter One', cursive;">Register</button>
+              <p  class="badge text-bg-primary">Punya akun ? <a href="<?= base_url('login'); ?>" class="link-danger"> Login</a></p>
           </div>
+
         </form>
-
-
       </div>
-      <!-- /.form-box -->
-    </div><!-- /.card -->
+    </div>
   </div>
-  <!-- /.register-box -->
-
-  <!-- jQuery -->
-  <script src="<?= base_url(); ?>assets/plugins/jquery/jquery.min.js"></script>
-  <!-- Bootstrap 4 -->
-  <script src="<?= base_url(); ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
-</body>
-</html>
+</section>
