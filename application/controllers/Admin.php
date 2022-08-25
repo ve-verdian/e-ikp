@@ -891,7 +891,7 @@ class Admin extends CI_Controller
     }
 
     public function ikp_print() {
-      $data['title'] = 'Form IKP | Cetak Data IKP';
+      $data['title'] = 'Cetak Data IKP';
       $uri = $this->uri->segment(3);
       $data['list_data']	= $this->db->query("SELECT * FROM tb_ikp WHERE id_ikp = '$uri'")->row();		
       $this->load->view('admin/ikp/print_ikp', $data);

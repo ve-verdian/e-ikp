@@ -4,8 +4,8 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title>FORMULIR IKP</title>
-
+    <title><?= $title; ?></title>
+    <link rel="shortcut icon" href="<?=base_url('assets/img/rsia_family.jpeg')?>">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <link href="<?= base_url(); ?>/assets/dist/css/bootstrap.min.css" rel="stylesheet">
 

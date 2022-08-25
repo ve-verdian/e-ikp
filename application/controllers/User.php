@@ -85,7 +85,7 @@ class User extends CI_Controller
 
   public function insert_ikp()
   {
-		$data['title'] = 'Form IKP | Tambah Data IKP';
+		$data['title'] = 'Tambah Data IKP';
     $data['avatar'] = $this->M_user->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
     $this->load->view('user/checkout/checkout',$data);
   }

@@ -8,6 +8,7 @@
     <meta name="generator" content="Hugo 0.101.0">
     <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
     <title>FORMULIR INSIDEN KESELAMATAN PASIEN</title>
+    <link rel="shortcut icon" href="<?=base_url('assets/img/rsia_family.jpeg')?>">
 
     <!-- <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/cover/"> -->
     <link href="<?= base_url(); ?>/assets/dist/css/bootstrap.min.css" rel="stylesheet">
