@@ -15,6 +15,33 @@ class Login extends CI_Controller {
 		$this->load->view('login/login',$data);
 	}
 
+	// public function captcha()
+    // {
+    //     $recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
+ 
+    //     $userIp=$this->input->ip_address();
+     
+    //     $secret = $this->config->item('google_secret');
+   
+    //     $url="https://www.google.com/recaptcha/api/siteverify?secret=".$secret."&response=".$recaptchaResponse."&remoteip=".$userIp;
+ 
+    //     $ch = curl_init(); 
+    //     curl_setopt($ch, CURLOPT_URL, $url); 
+    //     curl_setopt($ch, CURLOPT_RETURNTRANSFER, 1); 
+    //     $output = curl_exec($ch); 
+    //     curl_close($ch);      
+         
+    //     $status= json_decode($output, true);
+ 
+    //     if ($status['success']) {
+    //         print_r('Google Recaptcha Successful');
+    //         exit;
+    //     }else{
+    //         $this->session->set_flashdata('flashError', 'Sorry Google Recaptcha Unsuccessful!!');
+    //     }
+ 
+    // }   
+
 	public function token_generate(){
 		return $tokens = md5(uniqid(rand(), true));
 	}
@@ -27,10 +54,12 @@ class Login extends CI_Controller {
 	public function proses_login(){
 		$this->form_validation->set_rules('username','Username','required|trim');
 		$this->form_validation->set_rules('password','Password','required|trim');
+		// $this->input->post('g-recaptcha-response');
 
 		if($this->form_validation->run() == TRUE){
 			$username = $this->input->post('username',TRUE);
 			$password = $this->input->post('password',TRUE);
+			// $recaptchaResponse = trim($this->input->post('g-recaptcha-response'));
 
 		if($this->session->userdata('token_generate') === $this->input->post('token'))
 		{

@@ -551,6 +551,7 @@ class Admin extends CI_Controller
     $uri = $this->uri->segment(3);
     $where = array('id_ikp' => $uri);
     $this->M_admin->delete('tb_ikp',$where);
+    $this->session->set_flashdata('msg_hapus','Data IKP Berhasil di Hapus');
     redirect(base_url('admin/tabel_ikp'));
   }
 

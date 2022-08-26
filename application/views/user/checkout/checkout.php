@@ -166,14 +166,14 @@
             <div class="form-group col-md-3">
               <label for="tanggal_2" class="form-label">Tanggal dan Waktu Insiden</label>
               <input type="date" name="tanggal_2"  class="form-control"
-							id="tanggal_2" placeholder="Tanggal" tabindex="7">
+							id="tanggal_2" placeholder="Tanggal" tabindex="9">
 							<?= form_error('tanggal_2', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
 
             <div class="form-group col-md-2">
               <label for="waktu_2" class="form-label">Pukul</label>
               <input type="time" name="waktu_2"  class="form-control"
-							id="waktu_2" placeholder="Pukul" tabindex="8">
+							id="waktu_2" placeholder="Pukul" tabindex="10">
 							<?= form_error('waktu_2', '<small class="text-danger pl-3">', '</small>') ?>
             </div>
 

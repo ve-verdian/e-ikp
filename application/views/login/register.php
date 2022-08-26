@@ -106,10 +106,15 @@
               <?= form_error('confirm_password', '<small class="text-danger pl-3">', '</small>'); ?>
           </div>
 
+          <!-- <div class="col-8 mt-4">
+            <div class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div> 
+          </div> -->
+
           <div class="col-8 mt-4">
               <button type="submit" class="btn btn-danger btn-block btn-flat" aria-hidden="true"
                 style="font-family: 'Carter One', cursive;">Register</button>
-              <p  class="badge text-bg-primary">Punya akun ? <a href="<?= base_url('login'); ?>" class="link-danger"> Login</a></p>
+                <label class="fw-semibold">Punya akun ? </label><a href="<?= base_url('login'); ?>"
+                class="link-danger"> Login</a>
           </div>
 
         </form>
@@ -117,3 +122,5 @@
     </div>
   </div>
 </section>
+
+<script src='https://www.google.com/recaptcha/api.js'></script>

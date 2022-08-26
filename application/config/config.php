@@ -533,3 +533,5 @@ $config['rewrite_short_tags'] = FALSE;
 | Array:		array('10.0.1.200', '192.168.5.0/24')
 */
 $config['proxy_ips'] = '';
+$config['google_key'] = '6Lf-TashAAAAABHNLXK5Bogne44oxKzSsvNrehJ_';
+$config['google_secret'] = '6Lf-TashAAAAAODMk3R8Em7pJ8SNNA-8icHiuzK6';

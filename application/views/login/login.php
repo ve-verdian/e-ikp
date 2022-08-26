@@ -17,6 +17,10 @@
   <link rel="stylesheet" href="<?= base_url(); ?>assets/plugins/icheck-bootstrap/icheck-bootstrap.min.css">
   <!-- Theme style -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/dist/css/adminlte.min.css">
+  <!-- SweetAlert2 -->
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/plugins/toastr/toastr.min.css">
   <!-- Google Font: Source Sans Pro -->
   <link href="https://fonts.googleapis.com/css?family=Source+Sans+Pro:300,400,400i,700" rel="stylesheet">
   <link
@@ -68,7 +72,7 @@
             <?php if($this->session->flashdata('msg_terdaftar')){ ?>
             <div class="alert alert-success alert-dismissible">
               <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
-              <strong>Success</strong><br> <?= $this->session->flashdata('msg_terdaftar');?>
+              <strong>Success!</strong><br> <?= $this->session->flashdata('msg_terdaftar');?>
             </div>
             <?php } ?>
             
@@ -88,7 +92,11 @@
               <?= form_error('password', '<small class="text-danger pl-3">', '</small>'); ?>
           </div>
 
-          <div class="col-8 mt-4">
+          <!-- <div class="col-8 mt-4">
+            <div class="g-recaptcha" data-sitekey="<?php echo $this->config->item('google_key') ?>"></div> 
+          </div> -->
+
+            <div class="col-8 mt-4">
               <p class="mb-1">
                 <?php if(isset($token_generate)){ ?>
                 <input type="hidden" name="token" value="<?= $token_generate ?>">
@@ -101,18 +109,21 @@
             </div>
             <!-- /.col -->
             <div class="col-8">
-            <p class="badge text-bg-primary">Belum punya akun ? <a href="<?= base_url('login/register'); ?>"
-                class="link-danger">Register</a>
-            </p>
-
+              <label class="fw-semibold">Belum punya akun ? </label><a href="<?= base_url('login/register'); ?>"
+                class="link-danger"> Register</a>
         </form>
       </div>
     </div>
   </div>
 </section>
 
+  <script src='https://www.google.com/recaptcha/api.js'></script>
   <!-- jQuery -->
   <script src="<?= base_url(); ?>assets/plugins/jquery/jquery.min.js"></script>
   <!-- Bootstrap 4 -->
   <script src="<?= base_url(); ?>assets/plugins/bootstrap/js/bootstrap.bundle.min.js"></script>
+  <!-- SweetAlert2 -->
+  <script src="<?= base_url(); ?>assets/plugins/sweetalert2/sweetalert2.min.js"></script>
+  <!-- Toastr -->
+  <script src="<?= base_url(); ?>assets/plugins/toastr/toastr.min.js"></script>
 </body>

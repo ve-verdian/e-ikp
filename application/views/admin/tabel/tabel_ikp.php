@@ -44,6 +44,13 @@
                	</div>
               <?php } ?>
 
+              <?php if($this->session->flashdata('msg_hapus')){ ?>
+                <div class="alert alert-warning alert-dismissible" style="width:100%">
+                    <a href="#" class="close" data-dismiss="alert" aria-label="close">&times;</a>
+                    <strong>Success!</strong><br> <?= $this->session->flashdata('msg_hapus');?>
+               	</div>
+              <?php } ?>
+
 						<a href="<?=base_url('admin/ikp')?>" style="margin-bottom:10px;" type="button" class="btn btn-primary" name="tambah_data"><i class="fa fa-plus-circle" aria-hidden="true"></i> Tambah Data IKP</a>
             <a href="<?=base_url('excel/export_ikp')?>" style="margin-bottom:10px;" type="button" class="btn btn-success" name="export_excel"><i class="fa fa-plus-circle" aria-hidden="true"></i> Export Excel</a>
 						<!-- <a href="<?=base_url('admin/cetak_ikp')?>" style="margin-bottom:10px;" target="_BLANK" type="button" class="btn btn-danger" name="cetak_pdf"><i class="fa fa-plus-circle" aria-hidden="true"></i> Cetak Pdf</a>     -->

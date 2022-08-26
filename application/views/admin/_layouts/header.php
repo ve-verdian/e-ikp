@@ -24,7 +24,10 @@
   <link rel="stylesheet" href="<?= base_url(); ?>assets/plugins/summernote/summernote-bs4.min.css">
   <!-- Bootstrap 5.2 -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/bootstrap/css/bootstrap.css">
-  
+   <!-- SweetAlert2 -->
+   <link rel="stylesheet" href="<?= base_url(); ?>/assets/plugins/sweetalert2-theme-bootstrap-4/bootstrap-4.min.css">
+  <!-- Toastr -->
+  <link rel="stylesheet" href="<?= base_url(); ?>/assets/plugins/toastr/toastr.min.css">
   <!-- DataTables -->
   <link rel="stylesheet" href="<?= base_url(); ?>assets/plugins/datatables-bs4/css/dataTables.bootstrap4.css">
   <!-- Date Picker -->
