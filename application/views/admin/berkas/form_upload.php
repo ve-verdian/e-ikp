@@ -45,14 +45,13 @@
                   <p>Gunakan form dibawah ini untuk mengupload file.</p>
 
                   <form method="post" action="<?= base_url();?>upload/do_upload" enctype="multipart/form-data">
-                    <div class="form-group">
-                      <label>Pilih File</label>
-                      <input type="file" name="file_nya">
-                    </div>
+                  <div class="input-group mb-3">
+                    <label class="input-group-text" for="file_nya">Upload</label>
+                    <input type="file" class="form-control" id="file_nya" name="file_nya">
+                  </div>
 
                     <div class="form-group">
-                      <button type="submit" class="btn btn-primary"><span class="fas fa-upload"></span> Upload
-                        !</button>
+                      <button type="submit" class="btn btn-primary"><span class="fas fa-upload"></span> Upload!</button>
                     </div>
                   </form>
                 </div>

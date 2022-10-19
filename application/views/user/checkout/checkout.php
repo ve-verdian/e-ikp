@@ -4,7 +4,7 @@
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1">
     <meta name="description" content="">
-    <title><?= $title; ?></title>
+    <title>INPUT DATA IKP</title>
     <link rel="shortcut icon" href="<?=base_url('assets/img/rsia_family.jpeg')?>">
     <link rel="canonical" href="https://getbootstrap.com/docs/5.2/examples/checkout/">
     <link href="<?= base_url(); ?>/assets/dist/css/bootstrap.min.css" rel="stylesheet">
@@ -348,6 +348,23 @@
                 <span class="badge text-bg-danger">NB * : Pilih salah satu jawaban.</span></br>
                 <span class="badge text-bg-primary">Tipe Insiden : Diisi setelah dilakukan investigasi.</span>
             </div>
+
+            <!-- <div class="row">
+            <div class="form-group col-md-4">
+              <?php 
+              if ($this->session->flashdata('pesan_form')):
+                  echo $this->session->flashdata('pesan_form');
+              endif
+              ?>
+              <label for="captcha" class="form-label">Captcha</label>
+              <br>
+              <?=$captcha?><br>
+              <br>
+              <input type="text" name="captcha" class="form-control"
+              id="captcha" placeholder="Masukan Kode Captcha " tabindex="30">
+              <?= form_error('captcha', '<small class="text-danger pl-3">', '</small>') ?>
+            </div>
+            </div> -->
 
           <div class="card-footer">
             <a type="submit" href="<?=base_url('user/')?>" class="btn btn-warning" onclick="history.back(-1)" name="btn_kembali"><i class="far fa-arrow-alt-circle-left" aria-hidden="true"></i> Kembali</a>

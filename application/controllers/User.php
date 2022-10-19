@@ -9,6 +9,7 @@ class User extends CI_Controller
     parent::__construct();
     $this->load->model('M_user');
     $this->load->model('M_admin');
+    $this->load->helper('captcha');
   }
 
   public function index()
@@ -87,13 +88,57 @@ class User extends CI_Controller
   {
 		$data['title'] = 'Tambah Data IKP';
     $data['avatar'] = $this->M_user->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
-    $this->load->view('user/checkout/checkout',$data);
+    $data['captcha'] = $this->captcha();
+    // $this->load->view('user/checkout/checkout',$data);
   }
 
   public function tabel_ikp()
   {
     $data['list_data'] = $this->M_user->select('tb_ikp');
     $this->load->view('user/tabel/ikp_tabel',$data);
+  }
+
+  public function captcha()
+  {
+      $data['title'] = 'Tambah Data IKP';
+      $vals = [
+        // 'word' -> nantinya akan digunakan sebagai random teks yang akan keluar di captchanya
+          'word'          => substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 5),
+          'img_path'      => './assets/images/captcha/',
+          'img_url'       => base_url('assets/images/captcha/'),
+          'img_width'     => 150,
+          'img_height'    => 30,
+          'expiration'    => 7200,
+          'word_length'   => 5,
+          'font_size'     => 16,
+          'img_id'        => 'Imageid',
+          'pool'          => '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+          'colors'        => [
+                  'background'=> [255, 255, 255],
+                  'border'    => [255, 255, 255],
+                  'text'      => [0, 0, 0],
+                  'grid'      => [255, 40, 40]
+          ]
+      ];
+      
+      $captcha = create_captcha($vals);
+      $image = $captcha['image'];
+  
+      $this->session->set_userdata('captcha', $captcha['word']);
+      $this->load->view('user/checkout/checkout', ['captcha' => $captcha['image']]);
+  }
+
+  public function check_captcha() 
+  {
+      $post_code  = $this->input->post('captcha');
+      $captcha    = $this->session->userdata('captcha');
+      
+      if ($post_code && ($post_code == $captcha)) 
+          $this->session->set_flashdata('pesan_form', '<font style="color: green">Berhasil memverifikasi captcha.</font><br/>');
+      else
+          $this->session->set_flashdata('pesan_form', '<font style="color: red">Captcha yang Anda ketik salah!</font><br/>');
+
+      // redirect('captcha');
   }
 
   public function proses_ikp_insert()
@@ -116,9 +161,9 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('probalitas','Probalitas','trim|required');
 		$this->form_validation->set_rules('pelapor','Pelapor','trim|required');
     $this->form_validation->set_rules('ins_pas','Insiden Pasien','trim|required');
-		$this->form_validation->set_rules('tempat','Tempat','trim');
-		$this->form_validation->set_rules('unit_terkait','Unit Terkait','trim');
-		$this->form_validation->set_rules('tindaklanjut','Tindak Lanjut','trim');
+		$this->form_validation->set_rules('tempat','Tempat','trim|required');
+		$this->form_validation->set_rules('unit_terkait','Unit Terkait','trim|required');
+		$this->form_validation->set_rules('tindaklanjut','Tindak Lanjut','trim|required');
 		$this->form_validation->set_rules('stlh_dilaku','Setelah Dilakukan','trim|required');
 		$this->form_validation->set_rules('prnh_tjd','Pernah Terjadi','trim');
 		$this->form_validation->set_rules('no_ulang','Kapan');
@@ -127,6 +172,7 @@ class User extends CI_Controller
 		$this->form_validation->set_rules('kmrkp','Ketua KMRKP','trim|required');
 		$this->form_validation->set_rules('direktur','Direktur','trim|required');
     $this->form_validation->set_rules('grad_res','Grading Resiko','trim|required');
+    $this->form_validation->set_rules('captcha', 'Captcha', 'trim|callback_check_captcha|required');
 		$this->form_validation->set_message('required', '{field} wajib diisi');
 		
     if($this->form_validation->run() ==  TRUE)
@@ -160,7 +206,9 @@ class User extends CI_Controller
 			$kmrkp = $this->input->post('kmrkp' ,TRUE);
 			$direktur = $this->input->post('direktur' ,TRUE);
 			$grad_res = $this->input->post('grad_res' ,TRUE);
-
+      // $post_code  = $this->input->post('captcha',TRUE);
+      // $captcha    = $this->session->userdata('captcha',TRUE);
+      
       $data = array(
             'nama' => $nama,
 						'no_mr' => $no_mr,
@@ -193,16 +241,57 @@ class User extends CI_Controller
 						'karu' => $karu,
 						'kmrkp' => $kmrkp,
 						'direktur' => $direktur,
-						'grad_res' => $grad_res
+						'grad_res' => $grad_res,
+            // 'post_code' => $post_code,
+            // 'captcha' => $captcha,
+            
       );
+
       $this->M_user->insert('tb_ikp',$data);
+      
+      // $vals = [
+      //   // 'word' -> nantinya akan digunakan sebagai random teks yang akan keluar di captchanya
+      //     'word'          => substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 5),
+      //     'img_path'      => './assets/images/captcha/',
+      //     'img_url'       => base_url('assets/images/captcha/'),
+      //     'img_width'     => 150,
+      //     'img_height'    => 30,
+      //     'expiration'    => 7200,
+      //     'word_length'   => 5,
+      //     'font_size'     => 16,
+      //     'img_id'        => 'Imageid',
+      //     'pool'          => '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+      //     'colors'        => [
+      //             'background'=> [255, 255, 255],
+      //             'border'    => [255, 255, 255],
+      //             'text'      => [0, 0, 0],
+      //             'grid'      => [255, 40, 40]
+      //     ]
+      // ];
+      
+      // $captcha = create_captcha($vals);
+      // $image = $captcha['image'];
+  
+      // $this->session->set_userdata('captcha', $captcha['word']);
+      
+      // if($this->form_validation->run() ==  TRUE)
+      // {
+      //   $post_code  = $this->input->post('captcha');
+      //   $captcha    = $this->session->userdata('captcha');
+      
+      // if ($post_code && ($post_code == $captcha)) 
+      //     $this->session->set_flashdata('pesan_form', '<font style="color: green">Berhasil memverifikasi captcha.</font><br/>');
+      // else
+      //     $this->session->set_flashdata('pesan_form', '<font style="color: red">Captcha yang Anda ketik salah!</font><br/>');
+      // }
 
       $this->session->set_flashdata('msg_berhasil','Data IKP Berhasil di Tambahkan');
       redirect(base_url('user/tabel_ikp'));
     }else {
       $this->load->view('user/checkout/checkout');
-    }
+    } 
   }
+
 }
 
 ?>

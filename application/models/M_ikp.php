@@ -61,6 +61,7 @@ class M_ikp extends CI_Model
 		$this->db->or_like('kmrkp', $q);
 		$this->db->or_like('direktur', $q);
 		$this->db->or_like('grad_res', $q);
+		$this->db->or_like('post_code', $q);
 		$this->db->from($this->table);
         return $this->db->count_all_results();
     }
@@ -98,6 +99,7 @@ class M_ikp extends CI_Model
 		$this->db->or_like('kmrkp', $q);
 		$this->db->or_like('direktur', $q);
 		$this->db->or_like('grad_res', $q);
+		$this->db->or_like('post_code', $q);
 		$this->db->limit($limit, $start);
         return $this->db->get($this->table)->result();
     }
