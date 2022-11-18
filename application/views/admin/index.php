@@ -51,7 +51,7 @@
                     <h5 class="card-title"><b>Teramedik</b></h5>
                     <p class="card-text">Hospital Information System, Rumah Sakit Ibu & Anak Family</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="http://175.106.8.138:9099" target="_blank" class="btn btn-outline-danger btn-sm">Klik!</a>
+                    <a href="http://192.168.100.75/" target="_blank" class="btn btn-outline-danger btn-sm">Klik!</a>
                     </div> 
                   </div>
                 </div>

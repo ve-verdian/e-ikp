@@ -1,14 +1,13 @@
 -- phpMyAdmin SQL Dump
--- version 4.8.3
+-- version 5.2.0
 -- https://www.phpmyadmin.net/
 --
 -- Host: 127.0.0.1
--- Waktu pembuatan: 13 Agu 2022 pada 07.32
+-- Waktu pembuatan: 18 Nov 2022 pada 07.49
 -- Versi server: 10.1.35-MariaDB
 -- Versi PHP: 7.2.9
 
 SET SQL_MODE = "NO_AUTO_VALUE_ON_ZERO";
-SET AUTOCOMMIT = 0;
 START TRANSACTION;
 SET time_zone = "+00:00";
 
@@ -21,6 +20,19 @@ SET time_zone = "+00:00";
 --
 -- Database: `ikp`
 --
+
+-- --------------------------------------------------------
+
+--
+-- Struktur dari tabel `captcha`
+--
+
+CREATE TABLE `captcha` (
+  `captcha_id` bigint(13) UNSIGNED NOT NULL,
+  `captcha_time` int(10) UNSIGNED NOT NULL,
+  `ip_address` varchar(45) NOT NULL,
+  `word` varchar(20) NOT NULL
+) ENGINE=InnoDB DEFAULT CHARSET=utf8mb4;
 
 -- --------------------------------------------------------
 
@@ -182,15 +194,7 @@ CREATE TABLE `tb_ikp` (
   `biaya` varchar(50) NOT NULL,
   `jk` varchar(10) NOT NULL,
   `tanggal_1` date NOT NULL,
-<<<<<<< HEAD
-  `waktu_1` time NOT NULL,
   `tanggal_2` date NOT NULL,
-  `waktu_2` time NOT NULL,
-=======
-  `waktu_1` varchar(5) NOT NULL,
-  `tanggal_2` date NOT NULL,
-  `waktu_2` varchar(5) NOT NULL,
->>>>>>> f547f4ff5fc5775a7a83cddd45881b049f99b775
   `insiden` varchar(150) NOT NULL,
   `kronologi` varchar(200) NOT NULL,
   `jns_insiden` varchar(100) NOT NULL,
@@ -209,18 +213,24 @@ CREATE TABLE `tb_ikp` (
   `karu` varchar(50) NOT NULL,
   `kmrkp` varchar(50) NOT NULL,
   `direktur` varchar(50) NOT NULL,
-  `grad_res` varchar(5) NOT NULL,
+  `grad_res` varchar(6) NOT NULL,
   `created` datetime NOT NULL DEFAULT CURRENT_TIMESTAMP,
-  `modified` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP
+  `modified` datetime DEFAULT NULL ON UPDATE CURRENT_TIMESTAMP,
+  `waktu_1` time NOT NULL,
+  `waktu_2` time NOT NULL,
+  `post_code` varchar(5) NOT NULL,
+  `captcha` varchar(5) NOT NULL
 ) ENGINE=InnoDB DEFAULT CHARSET=latin1;
 
 --
 -- Dumping data untuk tabel `tb_ikp`
 --
 
-INSERT INTO `tb_ikp` (`id_ikp`, `nama`, `no_mr`, `ruangan`, `umur`, `biaya`, `jk`, `tanggal_1`, `waktu_1`, `tanggal_2`, `waktu_2` , `insiden`, `kronologi`, `jns_insiden`, `ins_tjd`, `dampak`, `probalitas`, `pelapor`, `ins_pas`, `tempat`, `unit_terkait`, `tindaklanjut`, `stlh_dilaku`, `prnh_tjd`, `no_ulang`, `petugas`, `karu`, `kmrkp`, `direktur`, `grad_res`, `created`, `modified`) VALUES
-(1, 'Administration', 12345678, 'Adm Ranap', 30, 'BPJS', 'Laki-laki', '2022-08-12', '20:30','2022-08-13', '20:31' , 'Jatuh', 'Tersandung tangga', 'Kejadian Nyaris Cedera/KNC (Near Miss)', 'Anak dan Subspesialisasinya', 'Kematian', 'Sangat Jarang', 'Karyawan : Dokter/Perawat/Petugas Lainnya', 'Pasien Rawat Inap', 'Lobby', 'Informasi', 'Periksa', 'Dokter', 'Ya', 'Jaman baheula', 'Perawat Satu', 'Karu Satu', 'Ketua KMRKP', 'Direktur', 'BIRU', '2019-11-05 09:11:38', '2019-11-05 11:53:09'),
-(2, 'Verdi Verdian', 12345678, 'EDP', 30, 'BPJS', 'Laki-laki', '2022-08-12', '20:31' , '2022-08-13', '20:31' , 'Jatuh', 'ergfajkhdklsahkdjhasdsa', 'Kejadian Tidak Cedera (KTC)', 'Lain-lain', 'Tidak Ada Cedera', 'Sangat Jarang', 'Karyawan : Dokter/Perawat/Petugas Lainnya', 'lain-lain', 'EDP', 'Gudang', 'asdfkljdkofhdgfkdshakfjdhfkawe', 'Dokter', 'Tidak', 'sdlfkhskjdkfhdjfkdhfkjwahfwfaf', 'perawat dua', 'karu dua', 'pak ketua', 'direktur', 'BIRU', '2022-08-13 09:40:21', NULL);
+INSERT INTO `tb_ikp` (`id_ikp`, `nama`, `no_mr`, `ruangan`, `umur`, `biaya`, `jk`, `tanggal_1`, `tanggal_2`, `insiden`, `kronologi`, `jns_insiden`, `ins_tjd`, `dampak`, `probalitas`, `pelapor`, `ins_pas`, `tempat`, `unit_terkait`, `tindaklanjut`, `stlh_dilaku`, `prnh_tjd`, `no_ulang`, `petugas`, `karu`, `kmrkp`, `direktur`, `grad_res`, `created`, `modified`, `waktu_1`, `waktu_2`, `post_code`, `captcha`) VALUES
+(12, 'Verdi Verdian', 321654, 'EDP', 30, 'BPJS', 'Laki-laki', '2022-08-18', '2022-08-26', 'Jatuh', 'Tersandung', 'Kejadian Tidak diharapakan/KTD (Adverse Event)', 'Obstetri Ginekologi dan Subspesialisasinya', 'Cedera Irreversibel/Cedera Berat', 'Sangat Jarang', 'Pasien', 'Pasien Rawat Jalan', 'EDP', 'Gudang', 'Periksa', 'Dokter', 'Tidak', '', 'perawat lima', 'karu lima', 'pak ketua', 'direktur', 'MERAH', '2022-08-18 08:40:43', '2022-08-26 08:08:58', '08:40:00', '11:43:00', '', ''),
+(18, 'User satu', 123456, 'Logistik', 40, 'Asuransi Swasta', 'Laki-laki', '2022-08-26', '2022-08-26', 'Jatuh', 'dgsfdsfffwfewf', 'Kejadian Potensial Cedera Serius/KPC (Significant)', 'Obstetri Ginekologi dan Subspesialisasinya', 'Cedera Reversibel/Cedera Ringan', 'Sangat Jarang', 'Karyawan : Dokter/Perawat/Petugas Lainnya', 'Pasien Rawat Jalan', 'Gudang', 'Perawatan LT. 3', 'sdfaggagera', 'Petugas Lainnya', 'Ya', 'ADSFKSDHFKJJEWFLKJEjflKJKLJLKAJFKDLSJFLsdsadasdsad', 'perawat tiga', 'karu tiga', 'pak ketua', 'direktur', 'MERAH', '2022-08-26 08:21:36', '2022-08-26 10:48:05', '08:20:00', '08:27:00', '', ''),
+(20, 'user dua', 123456, 'Kasir', 30, 'Asuransi Swasta', 'Perempuan', '2022-09-05', '2022-08-29', 'Jatuh', 'dgsfdsfffwfewf', 'Kejadian Potensial Cedera Serius/KPC (Significant)', 'Obstetri Ginekologi dan Subspesialisasinya', 'Cedera Reversibel/Cedera Ringan', 'Sangat Jarang', 'Karyawan : Dokter/Perawat/Petugas Lainnya', 'Pasien Rawat Jalan', 'Lobby', 'Security', 'sdfaggagera', 'Petugas Lainnya', 'Ya', 'ADSFKSDHFKJJEWFLKJEjflKJKLJLKAJFKDLSJFLsdsadasdsad', 'perawat lima', 'karu lima', 'pak ketua', 'direktur', 'KUNING', '2022-08-29 15:45:21', '2022-09-05 10:19:35', '15:44:00', '15:50:00', '', ''),
+(21, 'M. Hanafi', 852951, 'EDP', 30, 'BPJS', 'Laki-laki', '2022-11-08', '2022-11-08', 'Jatuh', 'dgsfdsfffwfewf', 'Kejadian Nyaris Cedera/KNC (Near Miss)', 'Penyakit Dalam dan Subspesialisasinya', 'Cedera Reversibel/Cedera Ringan', 'Sangat Jarang', 'Karyawan : Dokter/Perawat/Petugas Lainnya', 'Pasien Rawat Jalan', 'Gudang', 'Gudang', 'sdfaggagera', 'Dokter', 'Ya', ',adsmnfksakfjslkfjalskdjalsdjwqjdowqjdoqwjdwqjdd', 'perawat dua', 'karu dua', 'bu ketua', 'direktur', 'BIRU', '2022-11-08 11:11:36', '2022-11-08 11:11:55', '11:10:00', '11:16:00', '', '');
 
 -- --------------------------------------------------------
 
@@ -367,9 +377,26 @@ CREATE TABLE `tb_upload_gambar_user` (
 
 INSERT INTO `tb_upload_gambar_user` (`id`, `username_user`, `nama_file`, `ukuran_file`) VALUES
 (1, 'user', 'nopic2.png', '6.33'),
-(2, 'admin', 'avatar5.png', '7.82'),
+(2, 'admin', 'conan-edogawa-background-by-hazardman89-on-deviantart.jpg', '27.51'),
 (7, 'bambang', 'nopic2.png', '6.33'),
-(8, 'budi', 'nopic2.png', '6.33');
+(8, 'budi', 'nopic2.png', '6.33'),
+(9, 'verdi', 'nopic2.png', '6.33'),
+(10, 'hanafi', 'nopic2.png', '6.33'),
+(11, 'verdi', 'nopic2.png', '6.33'),
+(12, 'verdi', 'nopic2.png', '6.33'),
+(13, 'verdi', 'nopic2.png', '6.33'),
+(14, 'verdi', 'nopic2.png', '6.33'),
+(15, 'verdi', 'nopic2.png', '6.33'),
+(16, 'user', 'nopic2.png', '6.33'),
+(17, 'verdi', 'nopic2.png', '6.33'),
+(18, 'user', 'nopic2.png', '6.33'),
+(19, 'verdi', 'nopic2.png', '6.33'),
+(20, 'user', 'nopic2.png', '6.33'),
+(21, 'user', 'nopic2.png', '6.33'),
+(22, 'user', 'nopic2.png', '6.33'),
+(23, 'verdi', 'nopic2.png', '6.33'),
+(24, 'verdi', 'nopic2.png', '6.33'),
+(25, 'hanafi', 'nopic2.png', '6.33');
 
 -- --------------------------------------------------------
 
@@ -393,18 +420,20 @@ CREATE TABLE `user` (
 --
 
 INSERT INTO `user` (`id`, `username`, `email`, `password`, `role`, `last_login`, `created`, `modified`) VALUES
-(1, 'admin', 'admin@admin.com', '$2y$10$TVaKYRQt/aQwA.8Qy8pR7OqSgDPAgXIaVRcec9C6y2AZvyMt/V9NC', 1, '13-08-2022 4:10', '2019-11-05 09:10:57', '2022-08-13 09:10:09'),
-(2, 'naraku', 'naraku@gmail.com', '$2y$10$41Q5PhlKHjL6Ds.atmubZOSGrkhK6Va0UP39jVngEHf4GjYyeWI4C', 1, '08-10-2019 8:20', '2019-11-05 09:10:57', NULL),
-(3, 'user', 'user@gmail.com', '$2y$10$gImuxSLMUjGwH2kMaOtmMuJreLa0dIEVkHuE7GEkdma4wcoTtBKPC', 0, '31-10-2019 5:49', '2019-11-05 09:10:57', NULL),
-(27, 'coba', 'coba@coba.com', '$2y$10$bTs4JzqYsAzBeHu2l6Izhu9Ko4t/l9oAt8g38HZCQnLbpBqjBH43.', 1, '23-10-2019 2:49', '2019-11-05 09:10:57', NULL),
-(28, 'bambang', 'bambang@gmail.com', '$2y$10$OGvcuSMyHCQvutjdTHuJte4qBZrIHkWgQsYp2AExNrKa1YBtUtoDS', 0, '21-10-2019 5:18', '2019-11-05 09:10:57', NULL),
-(29, 'joko', 'joko@gmail.com', '$2y$10$NjPjpFy32IB.1BDiAtjbguQ4RRhdh5vRX0mzkPpShUIZT6WBaYIOG', 0, '23-10-2019 2:56', '2019-11-05 09:10:57', NULL),
-(30, 'budi', 'budi@gmail.com', '$2y$10$6AXEswbuyh4glrvN1n8EQuekIOuOjMtA2sPFkacfCNnTRN3ESLuKe', 0, '23-10-2019 3:02', '2019-11-05 09:10:57', NULL),
-(32, 'eko', 'eko@eko.com', '$2y$10$ESGFlxEgGMn9d1qlXNbq/OuYfb.t3FHZAR87gjFlhX6S6OCJA7r5K', 0, '23-10-2019 2:59', '2019-11-05 09:10:57', NULL);
+(1, 'admin', 'admin@admin.com', '$2y$10$TVaKYRQt/aQwA.8Qy8pR7OqSgDPAgXIaVRcec9C6y2AZvyMt/V9NC', 1, '08-11-2022 5:10', '2019-11-05 09:10:57', '2022-11-08 11:10:06'),
+(48, 'user', 'user@gmail.com', '$2y$10$h1A4xeSivnbR4cdXSmEg2eZP2TqauyXbfAIcSHZ98UOelt9CuNqG.', 0, '08-11-2022 5:12', '2022-08-25 17:33:52', '2022-11-08 11:12:07'),
+(50, 'verdi', 'verdi.2292@gmail.com', '$2y$10$DPIPu0LZwcnP/JpTWhmoKObpO8WDDTMErB1ut9t1pVKqayw.JpxVa', 0, '26-08-2022 3:20', '2022-08-26 08:20:15', '2022-08-26 08:20:23');
 
 --
 -- Indexes for dumped tables
 --
+
+--
+-- Indeks untuk tabel `captcha`
+--
+ALTER TABLE `captcha`
+  ADD PRIMARY KEY (`captcha_id`),
+  ADD KEY `word` (`word`);
 
 --
 -- Indeks untuk tabel `tb_barang_keluar`
@@ -471,6 +500,12 @@ ALTER TABLE `user`
 --
 
 --
+-- AUTO_INCREMENT untuk tabel `captcha`
+--
+ALTER TABLE `captcha`
+  MODIFY `captcha_id` bigint(13) UNSIGNED NOT NULL AUTO_INCREMENT;
+
+--
 -- AUTO_INCREMENT untuk tabel `tb_barang_keluar`
 --
 ALTER TABLE `tb_barang_keluar`
@@ -492,7 +527,7 @@ ALTER TABLE `tb_file_upload`
 -- AUTO_INCREMENT untuk tabel `tb_ikp`
 --
 ALTER TABLE `tb_ikp`
-  MODIFY `id_ikp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=3;
+  MODIFY `id_ikp` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=22;
 
 --
 -- AUTO_INCREMENT untuk tabel `tb_pc`
@@ -516,13 +551,13 @@ ALTER TABLE `tb_satuan`
 -- AUTO_INCREMENT untuk tabel `tb_upload_gambar_user`
 --
 ALTER TABLE `tb_upload_gambar_user`
-  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=9;
+  MODIFY `id` int(11) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=26;
 
 --
 -- AUTO_INCREMENT untuk tabel `user`
 --
 ALTER TABLE `user`
-  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=33;
+  MODIFY `id` int(12) NOT NULL AUTO_INCREMENT, AUTO_INCREMENT=51;
 COMMIT;
 
 /*!40101 SET CHARACTER_SET_CLIENT=@OLD_CHARACTER_SET_CLIENT */;

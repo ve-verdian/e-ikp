@@ -88,8 +88,8 @@ class User extends CI_Controller
   {
 		$data['title'] = 'Tambah Data IKP';
     $data['avatar'] = $this->M_user->get_data_gambar('tb_upload_gambar_user',$this->session->userdata('name'));
-    $data['captcha'] = $this->captcha();
-    // $this->load->view('user/checkout/checkout',$data);
+    // $data['captcha'] = $this->captcha();
+    $this->load->view('user/checkout/checkout',$data);
   }
 
   public function tabel_ikp()
@@ -98,48 +98,48 @@ class User extends CI_Controller
     $this->load->view('user/tabel/ikp_tabel',$data);
   }
 
-  public function captcha()
-  {
-      $data['title'] = 'Tambah Data IKP';
-      $vals = [
+  // public function captcha()
+  // {
+  //     $data['title'] = 'Tambah Data IKP';
+  //     $vals = [
         // 'word' -> nantinya akan digunakan sebagai random teks yang akan keluar di captchanya
-          'word'          => substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 5),
-          'img_path'      => './assets/images/captcha/',
-          'img_url'       => base_url('assets/images/captcha/'),
-          'img_width'     => 150,
-          'img_height'    => 30,
-          'expiration'    => 7200,
-          'word_length'   => 5,
-          'font_size'     => 16,
-          'img_id'        => 'Imageid',
-          'pool'          => '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
-          'colors'        => [
-                  'background'=> [255, 255, 255],
-                  'border'    => [255, 255, 255],
-                  'text'      => [0, 0, 0],
-                  'grid'      => [255, 40, 40]
-          ]
-      ];
+  //         'word'          => substr(str_shuffle('0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ'), 0, 5),
+  //         'img_path'      => './assets/images/captcha/',
+  //         'img_url'       => base_url('assets/images/captcha/'),
+  //         'img_width'     => 150,
+  //         'img_height'    => 30,
+  //         'expiration'    => 7200,
+  //         'word_length'   => 5,
+  //         'font_size'     => 16,
+  //         'img_id'        => 'Imageid',
+  //         'pool'          => '0123456789ABCDEFGHIJKLMNOPQRSTUVWXYZ',
+  //         'colors'        => [
+  //                 'background'=> [255, 255, 255],
+  //                 'border'    => [255, 255, 255],
+  //                 'text'      => [0, 0, 0],
+  //                 'grid'      => [255, 40, 40]
+  //         ]
+  //     ];
       
-      $captcha = create_captcha($vals);
-      $image = $captcha['image'];
+  //     $captcha = create_captcha($vals);
+  //     $image = $captcha['image'];
   
-      $this->session->set_userdata('captcha', $captcha['word']);
-      $this->load->view('user/checkout/checkout', ['captcha' => $captcha['image']]);
-  }
+  //     $this->session->set_userdata('captcha', $captcha['word']);
+  //     $this->load->view('user/checkout/checkout', ['captcha' => $captcha['image']]);
+  // }
 
-  public function check_captcha() 
-  {
-      $post_code  = $this->input->post('captcha');
-      $captcha    = $this->session->userdata('captcha');
+  // public function check_captcha() 
+  // {
+  //     $post_code  = $this->input->post('captcha');
+  //     $captcha    = $this->session->userdata('captcha');
       
-      if ($post_code && ($post_code == $captcha)) 
-          $this->session->set_flashdata('pesan_form', '<font style="color: green">Berhasil memverifikasi captcha.</font><br/>');
-      else
-          $this->session->set_flashdata('pesan_form', '<font style="color: red">Captcha yang Anda ketik salah!</font><br/>');
+  //     if ($post_code && ($post_code == $captcha)) 
+  //         $this->session->set_flashdata('pesan_form', '<font style="color: green">Berhasil memverifikasi captcha.</font><br/>');
+  //     else
+  //         $this->session->set_flashdata('pesan_form', '<font style="color: red">Captcha yang Anda ketik salah!</font><br/>');
 
-      // redirect('captcha');
-  }
+  //     redirect('captcha');
+  // }
 
   public function proses_ikp_insert()
   {
