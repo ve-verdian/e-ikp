@@ -45,7 +45,7 @@
               </div>
             </div>
             <div class="row">
-              <div class="col-sm-3">
+              <!-- <div class="col-sm-3">
                 <div class="card">
                   <div class="card-body">
                     <h5 class="card-title"><b>Teramedik</b></h5>
@@ -55,33 +55,33 @@
                     </div> 
                   </div>
                 </div>
-              </div>
-              <div class="col-sm-3">
+              </div> -->
+              <div class="col-sm-4">
                 <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title"><b>RS Cloud</b></h5>
+                    <h5 class="card-title"><b>RS CLOUD</b></h5>
                     <p class="card-text">Rumah yang aman untuk semua data Anda, alangkah baiknya di simpan di Cloud</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="http://175.106.8.138:9393/" target="_blank" class="btn btn-outline-danger btn-sm">Klik!</a>
+                    <a href="http://192.168.100.238/nextcloud/" target="_blank" class="btn btn-outline-danger btn-sm">Klik!</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title"><b>Sismadak</b></h5>
+                    <h5 class="card-title"><b>SIDOKAR v1.2</b></h5>
                     <p class="card-text">Mengumpulkan, menyimpan, dan mencari dokumen Akreditasi</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
-                    <a href="http://175.106.8.138:9292/" target="_blank" class="btn btn-outline-danger btn-sm">Klik!</a>
+                    <a href="http://akreditasi.rsiafamily.com/login.php" target="_blank" class="btn btn-outline-danger btn-sm">Klik!</a>
                     </div>
                   </div>
                 </div>
               </div>
-              <div class="col-sm-3">
+              <div class="col-sm-4">
                 <div class="card">
                   <div class="card-body">
-                    <h5 class="card-title"><b>Formulir IT</b></h5>
+                    <h5 class="card-title"><b>FORMULIR IT</b></h5>
                     <p class="card-text">Pengajuan akses user baik itu Teramedik, RS Cloud, Sismadak, ataupun Email</p>
                     <div class="d-grid gap-2 d-md-flex justify-content-md-end">
                     <a href="http://lims.rsiafamily.com:9494/flims/index.php?p=show_detail&id=25/" target="_blank" class="btn btn-outline-danger btn-sm">Klik!</a>
